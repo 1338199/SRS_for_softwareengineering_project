@@ -15,13 +15,19 @@
 %Also based on the template of Karl E. Wiegers
 %http://www.se.rit.edu/~emad/teaching/slides/srs_template_sep14.pdf
 %http://karlwiegers.com
-\documentclass{scrreprt}
+\documentclass[16pt]{scrreprt}
 \usepackage{listings}
+\usepackage{float}
+\usepackage{setspace}
+\usepackage{url}
+\usepackage{longtable}
+\usepackage{booktabs}
 \usepackage{underscore}
 \usepackage{graphicx, subfig}
 \usepackage[bookmarks=true]{hyperref}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
+
 \hypersetup{
     bookmarks=false,    % show bookmarks bar?
     pdftitle={Software Requirement Specification},    % title
@@ -41,12 +47,13 @@
 
 %}
 \usepackage{hyperref}
+\DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
 \begin{document}
 
 \begin{flushright}
     \rule{16cm}{5pt}\vskip1cm
     \begin{bfseries}
-        \Huge{SOFTWARE REQUIREMENTS\\ SPECIFICATION}\\
+        \LARGE{SOFTWARE REQUIREMENTS\\ SPECIFICATION}\\
         \vspace{0.8cm}
         for\\
         \vspace{0.8cm}
@@ -56,13 +63,13 @@
   		\includegraphics[width=.2\textwidth]{logo.png}
 		\end{figure}
         \vspace{0.8cm}
-        \LARGE{Version \myversion approved}\\
+        \normalsize{Version \myversion approved}\\
         \vspace{1.0cm}
         Prepared by\vspace{0.5cm} \\ 
-        \LARGE{1650940 Jiang Xiaohu\\1650932 Xu Jingnan\\1651058 Wang Yicheng}
+        \normalsize{1650940 Jiang Xiaohu\\1650932 Xu Jingnan\\1651058 Wang Yicheng}
         \\
         \vspace{1.1cm}
-        \LARGE{School of Software Engineering\\ Tongji University}\\
+        \normalsize{School of Software Engineering\\ Tongji University}\\
         \vspace{1.0cm}
         \today\\
     \end{bfseries}
@@ -78,7 +85,7 @@
         \hline
 	    Name & Date & Reason For Changes & Version\\
         \hline
-	    21 & 22 & 23 & 24\\
+	    Jiang Xiaohu & 2019.11.1 & Finish Introduction Part  & v1.0\\
         \hline
 	    31 & 32 & 33 & 34\\
         \hline
@@ -88,44 +95,133 @@
 \chapter{Introduction}
 
 \section{SRS Purpose}
-$<$Identify the product whose software requirements are specified in this 
-document, including the revision or release number. Describe the scope of the 
-product that is covered by this SRS, particularly if this SRS describes only 
-part of the system or a single subsystem.$>$
+The purpose of this document is to present a detailed description of iSport. It will explain the purpose and features of iSport, the interfaces of the iSport, the functional and nonfunctional requirements of iSport, what iSport will do, and the constraints under which it must operate and how the system will react to external stimuli. This document is intended for both the stakeholders and the developers of the system and will be proposed to the clients for its approval.
+%This SRS (Software Requirements Specification) document aims to identify the product--iSport whose software requirements are specified in this 
+%document, including the revision or release number. And the scope of iSport is covered by this SRS, too, particularly if this SRS describes only 
+%part of the system or a single subsystem.$>$
 
 \section{Product Scope}
-$<$Provide a short description of the software being specified and its purpose, 
-including relevant benefits, objectives, and goals. Relate the software to 
-corporate goals or business strategies. If a separate vision and scope document 
-is available, refer to it rather than duplicating its contents here.$>$
+This software system will be a web based system for sports fans, professional athletes, and patients who are under recovering training. \\
+\\
+This system will be designed to maximize the exercising efficiency by providing tools to assist in checking and correcting user's wrong postures and recommending training courses customized for users, which would otherwise have to be expensive, time-consuming and labor intensive. By maximizing the user’s training efficiency and convenience the system will meet the needs of sports fans, athletes and injured patients while remaining easy to understand and use.\\
+\\
+More specifically, this system is designed to allow a user to imitate the standard exercising postures while observe and correct their mistakes simultaneously with the help of a website. \\
+\\
+The software will collect some professional courses in the database, including static and dynamic trainings which means doing exercise according to a set of images or a video and iSport will recommend suitable trainings for users on the basis of their training performance. Courses are classified into exercising courses and recovering courses, aiming to help athletes and patients respectively.\\
+\\
+Both visual and audio notification are used in every course of the system to provide eye-catching, user-friendly and clear instructions; the feedback of one's training is proposed once the training is over and the report can be browsed in the report page.\\
+\\
+The selection and deletion of one user's favorable course is supported in personal information webpage and one can comment training he/she has taken on comment webpage to provide suggestions to other users.\\
+\\
+ The personal information registering, changes is allowed via the application options. The system also contains a relational database containing a list of users, training images and videos.
 
 \section{Intended Audience}
-$<$Describe the different types of reader that the document is intended for, 
-such as developers, project managers, marketing staff, users, testers, and 
-documentation writers. Describe what the rest of this SRS contains and how it is 
-organized. Suggest a sequence for reading the document, beginning with the 
-overview sections and proceeding through the sections that are most pertinent to 
-each reader type.$>$
+This Software Requirements document is intended for:
+\begin{itemize}
+	\item Developers who can review project’s capabilities and more easily understand where their efforts should be targeted to improve or add more features to it (design and code the application – it sets the guidelines for future development).
+	\item Project testers can use this document as a base for their testing strategy as some bugs are easier to find using a requirements document. This way testing becomes more methodically organized.
+   \item End users of this application who wish to read about what this project can do.
+   \item Clients who delegate the software development to our team, and can check if their requirements are perfectly understood by the developers and whether the functional and nonfunctional requirements are entirely meet. And they can modify some requirements according to this document in later stage. 
+   \item Project managers who translate the clients' requirement to the programmers and supervise them to implement the requirements mentioned in the documents and if the clients modify the requirements, the project managers have to negotiate the changes with the clients and modify the document.
+   \item Marketing staff who are responsible to sale and prompt the software should be clear about what iSport can do, what iSport's advantages are, what iSport's competitive power is.
+   \item Service staff who are responsible to solve the customer's problems, they have to know what iSport can do and feedback the technical problems to developers.
+   \item Document writers who are responsible for writing the rest documents in later development stages should follow the requirements specified in this SRS.
+\end{itemize}
+The rest part of this SRS document contains the overall description of iSport, and iSport's specific, nonfunctional and other requirements which are shown in chapter\ref{Overall Description}, chapter\ref{Specific Requirements}, chapter\ref{Other Nonfunctional Requirements} and chapter\ref{Other Requirements} respectively.
+We suggest the readers begin with the overview sections and proceeding through the sections that are most pertinent to them:
+\begin{itemize}
+	\item Developers and project testers are recommended to focus on specific and nonfunctional requirements part because theses parts will lead them to build qualified, safe and satisfying application and theses parts are all related to coding (construction and verification stage).
+	\item Clients, project managers and document writers should focus on the entire document since they are responsible for all the requirements specified in this paper.
+	\item Marketing staff have to focus on the functional part of iSport.
+\end{itemize}
+
 
 \section{Definitions, Acronyms, and Abbreviations}
-$<$ $>$
+\begin{longtable}{|p{1.9in}|p{4in}|c|}
+xxxxx & xxxxxx  \kill
+\caption{Definitions\label{simple}}\\ \hline
+\multicolumn{3}{|c|}{\bf Definitions, Acronyms, and Abbreviations}\\ \hline
+\endfirsthead
+\caption[]{(continued)}\\ \hline
+\multicolumn{3}{|c|}{\bf Definitions, Acronyms, and Abbreviations (continued)}\\
+\hline
+\endhead
+\hline
+\multicolumn{3}{|c|}{\bf Continued $\ldots$}\\
+\hline
+\endfoot
+\hline
+\multicolumn{3}{|c|}{\bf The End}\\
+\hline
+\endlastfoot
+Term & Definitions  \\
+\hline
+User & Someone who interacts with iSport including sports fans, athletes and  injured patients who need recovery training.\\  \hline  
+Sports fans & One of iSport's potential customers who love sports and want to get professional instructions when exercising. Some of them may can't afford the expense of personal coaching or don't have time to go to the gym. \\ \hline
+Athletes & One of iSport's potential customers who want to get real-time exercising feedback to improve their performance or who want to get some relaxing training in their spare time to keep a good competitive state.\\  \hline
+Injured Patients & One of iSport's potential customers who need recovering training after some treatments, e.g. surgeries. On the one hand, some of them may can't afford the doctor's expensive medical instructions for recovering training. on the other hand, there is no enough doctors or nurses who can instruct and supervise the patients' recovering exercising. But without professional instructions training can be useless or even leads to secondary trauma.\\  \hline
+Admin/Administrator & System administrator who is given specific permission for managing and controlling the system, e.g. updating the user's information, uploading new training courses.\\ \hline
+User Info & User's basic information including user's avatar, account name, tel-number and email address.\\ \hline
+Courses & Training courses including normal exercising training and recovering training.\\ \hline
+Normal Courses & Training courses which serve the sports fans and athletes.\\ \hline
+Recovering Courses & Training courses which serve the injured patients.\\ \hline
+Static Courses & Training courses which instruct the users photo by photo.\\ \hline
+Dynamic Courses & Training courses which instruct the users according to a standard video.\\ \hline
+Appraisal Subsystem & Remark the user's performance by using a grade from 0 -100\\ \hline
+Comment Subsystem & User comment on the training courses they have taken to provide reference for other users.\\ 
+\hline 
+Recommendation Subsystem & A subsystem which will provide some courses for users according to their recent performance.\\ 
+\hline
+Exercise Tips & There will be sports tips in the webpage of iSport to prevent users from athletic injuries.\\ 
+\hline 
+Sport Report & A web page to feedback the user's exercising performance.\\ 
+\hline 
+Audio Notification & An audio notification will be shown when the user is doing exercise to encourage the user to hold on or notify the user to correct their postures.\\ 
+\hline 
+Visual Notification & A visual notification will be shown when the user is doing exercise, if the user's posture is standard, then the web-frame will turn green to suggest the user to hold on, otherwise the web-frame will be red.\\ 
+\hline 
+DataBase & A relational database containing a list of user info, training images and videos.\\ 
+\hline 
+Detection Subsystem & Subsystem to detect the user's postures and draw the user's skeleton. The main model of detection subsystem is PoseNet.\\ 
+\hline 
+Comparison Subsystem & Subsystem to compare the postures of the user and that of the standard. The subsystem aims to check if the user pass the posture.\\ 
+\hline 
+Correction Subsystem & Subsystem to calculate where the postures' wrong part are, e.g. left-arm, right-leg, head.\\ 
+\hline 
+Clients & Group who delegate the development of iSport to the developers and will take charge of the later management of iSport.\\ \hline
+Developers & Develop team including project managers, programmers, testers who are responsible for the development of iSport and its later mainteinance and updating.\\ 
+\hline 
+\end{longtable}
 
 \section{Document Conventions}
-$<$Describe any standards or typographical conventions that were followed when 
-writing this SRS, such as fonts or highlighting that have special significance.  
-For example, state whether priorities  for higher-level requirements are assumed 
-to be inherited by detailed requirements, or whether every requirement statement 
-is to have its own priority.$>$
+This document follows MLA Format[1]. Bold-faced text has been used to emphasize sectionand sub-section headings. Highlighting is to point out the references of tables and figures. And italicized text is used to label and recognize special characters or terminologies\\
+
+The SRS paper is written by latex[4], the packages we used to format the document including \small{$longtable, graphicx, subfig, utf8-inputenc,hyperref$ }and so on.\\
+And we modified the IEEE SRS latex template from Jean-Philippe Eisenbarth's github[5] according to the IEEE standard[2] mentioned in Frank F Tusi'book[3].
+
 
 \section{References and Acknowledgements}
-$<$List any other documents or Web addresses to which this SRS refers. These may 
-include user interface style guides, contracts, standards, system requirements 
-specifications, use case documents, or a vision and scope document. Provide 
-enough information so that the reader could access a copy of each reference, 
-including title, author, version number, date, and source or location.$>$
+\subsubsection{Standard Reference}
+The standard we have followed are as follows:\\
+
+$[1]$ T. Russell, A. Brizee, E. Angeli, and R. Keck, “Mla formatting and style guide,” The Purdue OWL, 2010.\\
+
+$[2]$ I. S. E. S. Committee et al., “Ieee recommended practice for software re- quirements specifications,” IEEE organization, 1998.\\
+
+
+$[3]$ F. F. Tsui, O. Karam, and B. Bernal, Essentials of software engineering. Jones Bartlett Learning, 2016.
+
+\subsubsection{Writing Tools Reference}
+The writing tools we have used are as follows:\\
+
+$[4]$L. Lamport, LATEX: a document preparation system: user’s guide and reference manual. Addison-wesley, 1994.\\
+
+$[5]$ J.-P. Eisenbarth, “Srs latex template under ieee standard,” \\http://https://github.com/jpeisenbarth/SRS-Tex.
+
 
 
 \chapter{Overall Description}
+\label{Overall Description}
 
 \section{Product Perspective}
 $<$Describe the context and origin of the product being specified in this SRS.  
@@ -187,7 +283,7 @@ example, in the vision and scope document or the project plan).$>$
 
 
 \chapter{Specific Requirements}
-
+\label{Specific Requirements}
 \section{External Interfaces Requirements}
 $<$ $>$
 %\section{User Interfaces}
@@ -273,7 +369,7 @@ $<$ $>$
 
 
 \chapter{Other Nonfunctional Requirements}
-
+\label{Other Nonfunctional Requirements}
 \section{Performance Requirements}
 $<$If there are performance requirements for the product under various 
 circumstances, state them here and explain their rationale, to help the 
@@ -313,6 +409,7 @@ such as ease of use over ease of learning.$>$
 
 
 \chapter{Other Requirements}
+\label{Other Requirements}
 $<$Define any other requirements not covered elsewhere in the SRS. This might 
 include database requirements, internationalization requirements, legal 
 requirements, reuse objectives for the project, and so on. Add any new sections 
@@ -321,19 +418,19 @@ that are pertinent to the project.$>$
 \section{Data Dictionary Requirements}
 $<$ $>$
 
-\section{Appendix A: Glossary}
-%see https://en.wikibooks.org/wiki/LaTeX/Glossary
-$<$Define all the terms necessary to properly interpret the SRS, including 
-acronyms and abbreviations. You may wish to build a separate glossary that spans 
-multiple projects or the entire organization, and just include terms specific to 
-a single project in each SRS.$>$
+%\section{Appendix A: Glossary}
+%%see https://en.wikibooks.org/wiki/LaTeX/Glossary
+%$<$Define all the terms necessary to properly interpret the SRS, including 
+%acronyms and abbreviations. You may wish to build a separate glossary that spans 
+%multiple projects or the entire organization, and just include terms specific to 
+%a single project in each SRS.$>$
 
-\section{Appendix B: Analysis Models}
+\section{Appendix A: Analysis Models}
 $<$Optionally, include any pertinent analysis models, such as data flow 
 diagrams, class diagrams, state-transition diagrams, or entity-relationship 
 diagrams.$>$
 
-\section{Appendix C: To Be Determined List}
+\section{Appendix B: To Be Determined List}
 $<$Collect a numbered list of the TBD (to be determined) references that remain 
 in the SRS so they can be tracked to closure.$>$
 
