@@ -224,31 +224,51 @@ $[5]$ J.-P. Eisenbarth, “Srs latex template under ieee standard,” \\http://h
 
 \section{Product Perspective}
 
-ISport is a web system developed by isport team, aimming at posture correcting with the assist of camera.
+ISport is a web system developed by isport team, aimming at posture correcting with the assist of camera.\\
 
 The context diagram in the folowing figure illustrates the external entities and system interfaces. The system is expected to evolve over at least three releases, ultimately allowing for complete streamlining of the posture correcting process, fitness classes and rehabilitation classes for learning.
 
 \section{Product Functionality}
 
-\\\
 
-Action importing from camera\\
+ISport contains these following key features:\\
 
-Extract posture\\
+Let the user register their account of the website through their mobile phone or e-mail.\\
 
-Log in and register function\\
+Let the user log in to the system by correctly complete the log-in form. If the username is not in the database, the user will be prompted to register his/her account.\\
 
-Compare the data of key points\\
+User can modify his/her account information after logging in, including the username, e-mail address, phone number, gender, age and so on.\\
 
-Show the result and notice\\
+Show all the sorted fitness courses in a list for user to choose in the fitness courses view page. \\
 
-Generate, print and export report for user to download\\
+Show a list of courses that the user has selected to learn before\\
 
-Provide fitness classes and rehabilitation classes for learning\\
+Show a list of recommended courses for the user by user's previous behavior \\
 
-Posture data management\\
+Show the comment and evaluation of each courses in their detailed page\\
 
-Provide place for user to leave their opinion and comment\\
+Provide the add button for user to add a course he/she want to learn in the future and add the course to his/her courses list.\\
+
+Provide the delete button for user to remove a course he/she doesn't want to learn and remove the course from his/her courses list.\\
+
+
+Generate user's exercise report for watching and analyzing in the report page\\
+
+Give the user a space to leave his/her evaluation about the courses learnt before\\
+
+Capture and Collect the posture data of the user in front of the computer and store the data in the server.\\
+
+
+Compare user's posture with the standard one and calculate the similarity between the postures.\\
+
+
+Show tips on the user's screen to notice the wrong posture of the user and help to correct them.\\
+
+
+Rate the user's posture on a scale of zero to ten to let the user know whether his posture is standard or not\\
+
+
+System administrator can upload new courses to the system for users to choose and learn.\\
 
 
 \section{Users and Characteristics}
@@ -260,9 +280,9 @@ Provide place for user to leave their opinion and comment\\
         \hline
 	    People who want to correct their posture &  Normal user is expected to register and log in the system, upload their posture and get the feedback advice from the system\\
         \hline
-	    People who want to be fitness & People who want to be fitness is expected to register and log in the system, chooes fitness classes for themselves and learn it on the website\\
+	    People who want to be fitness & People who want to be fitness is expected to register and log in the system, choose fitness classes for themselves and learn it on the website\\
         \hline
-        People who need rehabilitation & People who need rehabilitation is expected to register and log in the system, chooes fitness classes for themselves and learn it on the website\\
+        People who need rehabilitation & People who need rehabilitation is expected to register and log in the system, choose fitness classes for themselves and learn it on the website\\
         \hline
         System Administrator & System Administrator has the privilege to update posture information in the database. The Administrator does not directly interact with the website\\
         \hline
@@ -271,9 +291,7 @@ Provide place for user to leave their opinion and comment\\
 
 \section{Operating Environment}
 
-\subsubsection{Hardware}
-
-\\~
+\subsubsection{Hardware}
 
 \noindent1. Server\\
 
@@ -285,8 +303,6 @@ External Storage: 500G SSD\\
 
 Quantity: 1\\
 
-\\~
-
 \noindent 2. Client(Minimum Configuration)\\
 
 CPU: Single-Core 1GHz\\
@@ -296,9 +312,7 @@ Memory: 2G\\
 External Storage: 20GB HDD\\
 
 
-\subsubsection{Software}
-
-\\~
+\subsubsection{Software}
 
 \noindent 1. Server\\
 
@@ -306,7 +320,7 @@ Operating System: Ubuntu 18.04 LTS\\
 
 Database: MySQL\\
 
-Software&Library : Python, Spring, TensorFlow, Nginx\\
+Software and Library : Python, Spring, TensorFlow, Nginx\\
 
 \~
 
@@ -320,7 +334,7 @@ Software: Browser\\
 \begin{center}
     \begin{tabular}{p{7cm}p{7cm}}
         \hline
-	    Recommad Browser & Version\\
+	    Recommand Browser & Version\\
         \hline
 	    Google Chrome &  44+\\
         \hline
@@ -356,7 +370,7 @@ Along with this system: iSport, a user manual need to be written to help users u
 
 Trying to use step-by-step instructions for users who firstly log in to the website, by showing messaging structures, quick references, tips and glossary of terms.\\
 
-User documant can be written in HyperText Markup Language (HTML) or Portable Document Format (PDF) , which must describe the use of the software system.
+User document can be written in HyperText Markup Language (HTML) or Portable Document Format (PDF) , which must describe the use of the software system.
 
 \section{Assumptions and Dependencies}
 
