@@ -285,6 +285,81 @@ example, in the vision and scope document or the project plan).$>$
 \chapter{Specific Requirements}
 \label{Specific Requirements}
 \section{External Interfaces Requirements}
+\subsection{User Interfaces}
+\begin{itemize}
+    \item GUI Standard: Material Design is a design language that Google developed in 2014. Expanding on the "card" motifs that debuted in Google Now, Material Design uses more grid-based layouts, responsive animations and transitions, padding, and depth effects such as lighting and shadows.
+    \item font Standard: Google Sans Font, agree with Material Design
+    \item button Standard: Material Design
+    \item color scheme: Dark, Light, changes in different system color scheme. Nowadays, every OS has at least 2 types color scheme, someone may prefer dark mode to be less distract.
+    \item screen layout/resolution: adapt to user's device
+    \item function, navigation links: in login page, user can go to homepage or register page by router. After entering homepage, user can see a navigation bar, in which user can jump to every sub-page without difficulty.
+    \item message display: every dangerous change, such as changing password, username, phone number, the web page will show a message notification, on the righttop. If user does some wrong gestures, it will show a message notification and bell a sound to warn.
+\end{itemize}
+\subsection{Hardware Interfaces}
+\begin{itemize}
+    \item supported device:\\
+        \begin{itemize}
+            \item mobile phones, including Android and iOS devices, with camera authorization.
+            \item computers with camera or laptop, with camera authorization.
+        \end{itemize}
+
+    \item deployed device:\\
+        A cloud web server in Ali Cloud, with 4 gigabytes RAM and dual-core CPU and 1TB disk.\\
+        We deployed our web service, including database, backend on one server, the user amount now is not a large number, in some day if the user group grows larger and larger, we may use multiple servers and consider disturbed system.  
+\end{itemize}
+    Our product recall the interface between camera, to update data which contains the gestures user does to our server to analysis whether what the user does corresponds to criterion.
+\subsection{Software Interfaces}
+\begin{itemize}
+    \item Third part APIs we use
+        \begin{itemize}
+            \item OS: our service requires the OS grant the permission to recall camera of user divices.
+            \item database: the database of our service is generally MySQL. Java Database Connectivity (JDBC) is an application programming interface (API) for the programming language Java, which defines how a client may access a database. It is a Java-based data access technology used for Java database connectivity. It is part of the Java Standard Edition platform, from Oracle Corporation. It provides methods to query and update data in a database, and is oriented towards relational databases. A JDBC-to-ODBC bridge enables connections to any ODBC-accessible data source in the Java virtual machine (JVM) host environment. To make jwt works correctly, we use a key-value dababase called redis, storing outdated token and blocking them to avoid a situation that a user just changed his password, but his token is still not outdated, because jwt cannot forces a token to be outdated.
+            \item Springboot: the backend programm language is Java, our backend is based on Springboot and developed in form of microservice architecture. Microservice architecture is a development trend and arranges an application as a collection of loosely coupled services. In a microservices architecture, services are fine-grained and the protocols are lightweight. With APIs provided by Springboot, the development goes efficiently and standard.
+            \item PoseNet: our identification technologies is provided by a open-source project named PoseNet, PoseNet contains a standalone model called PoseNet, as well as some demos, for running real-time pose estimation in the browser using TensorFlow.js.
+        \end{itemize}
+    \item APIs we provide
+        \begin{itemize}
+            \item user register API\\
+                This API provides the function that a new user becomes a new menber of iSport.\\
+                API checks:
+                \begin{itemize}
+                    \item whether the username has registered, 
+                    \item whether the phone or email is empty
+                \end{itemize}
+                if pass all restrict, the new user owns his data in our database.
+            \item user login API\\
+                This API provides the function that a user launch a new session.\\
+                API checks:
+                \begin{itemize}
+                    \item whether this user has register.
+                    \item the correction of password
+                \end{itemize}
+                if pass all restrict, the user now has logged in. He can begin to exercise.
+            \item all courses API\\
+                This API recieves a integer send by client, requests backend to return all courses with the type user type in. There two types of courses in iSport, one is rehabilitation course and the other is training course.
+                API checks the type typed in by user, an integer, to return. Only 0 and 1 is valid, 1 is for rehabilitation, and 0 is for training.
+            \item course content API\\ 
+                This API recieves an ID of a course, and return all photography of this course, the provide a basic message to users.\\
+                API checks the input, make sure that the input is not an empty input, then query in database, if the ID is invalid(e.g. not a course with this ID), the API throw an exception. If not, API respond with all photography about this course in database.
+            \item get user name\\
+                This API revives the ID of user, returns the username.\\
+                API checks the validity of the input, if the ID is valid, API respond with the username.
+            \item get user information\\
+                This API recieves the ID of user, returns the user information.\\
+                API checks the validity of the input, if the ID is valid, API respond with all user information.
+            \item update the user information\\
+                This API recieves the ID and information to update, to update user information in the database.\\
+                API checks the validity of input, if ID is invalid, or one of all the parameter is empty, the API throws an exception.
+            \item course information\\
+                This API need the login data of user. Requests backend to respond all courses the user has taken.
+            \item course delete\\
+                This API need the login data of user. send the id of the course to be deleted, requests backend to delete this course information in user's take table.
+                If the user doesn't take this course, this API throws an exception.
+        \end{itemize}
+\end{itemize}
+\subsection{Communications Interfaces}
+The data transferring in the Internet is video, and we choose the broadcast protocol is http-flv. This protocol is widely ued in the living industry, with the advantage of low-delay and ease to go through the firewall, it is also friendly to dispatch the rate of flow. \\ 
+The session communication data is transferred in form of json. Json is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate. Using jwt to authenticate can confirm safety of user session data. JSON Web Token (JWT) is an Internet standard for creating JSON-based access tokens that assert some number of claims. For example, a server could generate a token that has the claim "logged in as admin" and provide that to a client. The client could then use that token to prove that it is logged in as admin. The tokens are signed by one party's private key (usually the server's), so that both parties (the other already being, by some suitable and trustworthy means, in possession of the corresponding public key) are able to verify that the token is legitimate. The tokens are designed to be compact, URL-safe, and usable especially in a web-browser single-sign-on (SSO) context. JWT claims can be typically used to pass identity of authenticated users between an identity provider and a service provider, or any other type of claims as required by business processes. \\
 $<$ $>$
 %\section{User Interfaces}
 %$<$Describe the logical characteristics of each interface between the software 
