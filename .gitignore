@@ -1,3 +1,11 @@
 .DS_Store
 *.pdf
 /temp
+/.texpadtmp
+*.aux
+*.dvi
+*.log
+*.out
+*.out.ps
+*.synctex.gz
+*.toc
