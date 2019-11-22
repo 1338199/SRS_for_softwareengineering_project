@@ -219,67 +219,169 @@ $[4]$L. Lamport, LATEX: a document preparation system: user’s guide and refere
 $[5]$ J.-P. Eisenbarth, “Srs latex template under ieee standard,” \\http://https://github.com/jpeisenbarth/SRS-Tex.
 
 
-
 \chapter{Overall Description}
 \label{Overall Description}
 
 \section{Product Perspective}
-$<$Describe the context and origin of the product being specified in this SRS.  
-For example, state whether this product is a follow-on member of a product 
-family, a replacement for certain existing systems, or a new, self-contained 
-product. If the SRS defines a component of a larger system, relate the 
-requirements of the larger system to the functionality of this software and 
-identify interfaces between the two. A simple diagram that shows the major 
-components of the overall system, subsystem interconnections, and external 
-interfaces can be helpful.$>$
+
+ISport is a web system developed by isport team, aimming at posture correcting with the assist of camera.\\
+
+The context diagram in the folowing figure illustrates the external entities and system interfaces. The system is expected to evolve over at least three releases, ultimately allowing for complete streamlining of the posture correcting process, fitness classes and rehabilitation classes for learning.
 
 \section{Product Functionality}
-$<$Summarize the major functions the product must perform or must let the user 
-perform. Details will be provided in Section 3, so only a high level summary 
-(such as a bullet list) is needed here. Organize the functions to make them 
-understandable to any reader of the SRS. A picture of the major groups of 
-related requirements and how they relate, such as a top level data flow diagram 
-or object class diagram, is often effective.$>$
+
+
+ISport contains these following key features:\\
+
+Let the user register their account of the website through their mobile phone or e-mail.\\
+
+Let the user log in to the system by correctly complete the log-in form. If the username is not in the database, the user will be prompted to register his/her account.\\
+
+User can modify his/her account information after logging in, including the username, e-mail address, phone number, gender, age and so on.\\
+
+Show all the sorted fitness courses in a list for user to choose in the fitness courses view page. \\
+
+Show a list of courses that the user has selected to learn before\\
+
+Show a list of recommended courses for the user by user's previous behavior \\
+
+Show the comment and evaluation of each courses in their detailed page\\
+
+Provide the add button for user to add a course he/she want to learn in the future and add the course to his/her courses list.\\
+
+Provide the delete button for user to remove a course he/she doesn't want to learn and remove the course from his/her courses list.\\
+
+
+Generate user's exercise report for watching and analyzing in the report page\\
+
+Give the user a space to leave his/her evaluation about the courses learnt before\\
+
+Capture and Collect the posture data of the user in front of the computer and store the data in the server.\\
+
+
+Compare user's posture with the standard one and calculate the similarity between the postures.\\
+
+
+Show tips on the user's screen to notice the wrong posture of the user and help to correct them.\\
+
+
+Rate the user's posture on a scale of zero to ten to let the user know whether his posture is standard or not\\
+
+
+System administrator can upload new courses to the system for users to choose and learn.\\
+
 
 \section{Users and Characteristics}
-$<$Identify the various user classes that you anticipate will use this product.  
-User classes may be differentiated based on frequency of use, subset of product 
-functions used, technical expertise, security or privilege levels, educational 
-level, or experience. Describe the pertinent characteristics of each user class.  
-Certain requirements may pertain only to certain user classes. Distinguish the 
-most important user classes for this product from those who are less important 
-to satisfy.$>$
+
+\begin{center}
+    \begin{tabular}{p{5cm}p{11cm}}
+        \hline
+	    Users & Desc\\
+        \hline
+	    People who want to correct their posture &  Normal user is expected to register and log in the system, upload their posture and get the feedback advice from the system\\
+        \hline
+	    People who want to be fitness & People who want to be fitness is expected to register and log in the system, choose fitness classes for themselves and learn it on the website\\
+        \hline
+        People who need rehabilitation & People who need rehabilitation is expected to register and log in the system, choose fitness classes for themselves and learn it on the website\\
+        \hline
+        System Administrator & System Administrator has the privilege to update posture information in the database. The Administrator does not directly interact with the website\\
+        \hline
+    \end{tabular}
+\end{center}
 
 \section{Operating Environment}
-$<$Describe the environment in which the software will operate, including the 
-hardware platform, operating system and versions, and any other software 
-components or applications with which it must peacefully coexist.$>$
+
+\subsubsection{Hardware}
+
+\noindent1. Server\\
+
+CPU: Intel Dual-Core 2.4GHz\\
+
+Memory: 8GB\\
+
+External Storage: 500G SSD\\
+
+Quantity: 1\\
+
+\noindent 2. Client(Minimum Configuration)\\
+
+CPU: Single-Core 1GHz\\
+
+Memory: 2G\\
+
+External Storage: 20GB HDD\\
+
+
+\subsubsection{Software}
+
+\noindent 1. Server\\
+
+Operating System: Ubuntu 18.04 LTS\\
+
+Database: MySQL\\
+
+Software and Library : Python, Spring, TensorFlow, Nginx\\
+
+
+\noindent 2. Client\\
+
+Operating System: Windows/macOS/Linux/Android/IOS\\
+
+Software: Browser\\
+
+
+\begin{center}
+    \begin{tabular}{p{7cm}p{7cm}}
+        \hline
+	    Recommand Browser & Version\\
+        \hline
+	    Google Chrome &  44+\\
+        \hline
+	    Mozilla Firefox & 40+\\
+        \hline
+        Apple Safari & 7+\\
+        \hline
+        Microsoft Edge & 12+\\
+        \hline
+        Microsoft Internet Explorer & 11+\\
+        \hline
+        Opera Opera & 31+\\
+        \hline
+
+    \end{tabular}
+\end{center}
 
 \section{Design and Implementation Constraints}
-$<$Describe any items or issues that will limit the options available to the 
-developers. These might include: corporate or regulatory policies; hardware 
-limitations (timing requirements, memory requirements); interfaces to other 
-applications; specific technologies, tools, and databases to be used; parallel 
-operations; language requirements; communications protocols; security 
-considerations; design conventions or programming standards (for example, if the 
-customer’s organization will be responsible for maintaining the delivered 
-software).$>$
+
+\noindent 1. Memory: Server will have 500GB internal hard drive. Softwares and database cannot exceed this amount. System administrator must notice this limitation. And each user should follow the rule that the video data uploaded each time shall not be greater than 100M\\
+
+
+\noindent 2. Language requirements: software must be multilingual, including the following languages: English, Chinese\\
+
+
+\noindent 3. Number of user: each video uploaded must be one person. Each time this system can only deal with one person's data.\\
 
 \section{User Documentation}
-$<$List the user documentation components (such as user manuals, on-line help, 
-and tutorials) that will be delivered along with the software. Identify any 
-known user documentation delivery formats or standards.$>$
+
+Along with this system: iSport, a user manual need to be written to help users understand how to operate the system. It would be written for nontechnical individuals and the level of content would differ considerably from a system administration guide, which is more detailed and complex. The user manual would follow common user documentation styles to be simple.\\
+
+Trying to use step-by-step instructions for users who firstly log in to the website, by showing messaging structures, quick references, tips and glossary of terms.\\
+
+User document can be written in HyperText Markup Language (HTML) or Portable Document Format (PDF) , which must describe the use of the software system.
 
 \section{Assumptions and Dependencies}
 
-$<$List any assumed factors (as opposed to known facts) that could affect the 
-requirements stated in the SRS. These could include third-party or commercial 
-components that you plan to use, issues around the development or operating 
-environment, or constraints. The project could be affected if these assumptions 
-are incorrect, are not shared, or change. Also identify any dependencies the 
-project has on external factors, such as software components that you intend to 
-reuse from another project, unless they are already documented elsewhere (for 
-example, in the vision and scope document or the project plan).$>$
+It is assumed that the website will work correctly with every third-party operating
+system and compatible across all of the major browsers.\\
+
+Assumed that the web server always runs well without down or not responding.\\
+
+
+ISport provides two kinds of classes for user to choose: fitness classes and rehabilitation classes.\\
+
+Website visitors who have not been registered are only allowed to watch some demo videos, they are not allowed to upload their posture video data before registering.\\
+
+In addition to test their posture and attend into courses, members are also allowed to update their information, but they have to log in first.\\
 
 
 \chapter{Specific Requirements}
