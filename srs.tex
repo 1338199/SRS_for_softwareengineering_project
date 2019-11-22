@@ -462,7 +462,6 @@ In addition to test their posture and attend into courses, members are also allo
 \subsection{Communications Interfaces}
 The data transferring in the Internet is video, and we choose the broadcast protocol is http-flv. This protocol is widely ued in the living industry, with the advantage of low-delay and ease to go through the firewall, it is also friendly to dispatch the rate of flow. \\ 
 The session communication data is transferred in form of json. Json is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate. Using jwt to authenticate can confirm safety of user session data. JSON Web Token (JWT) is an Internet standard for creating JSON-based access tokens that assert some number of claims. For example, a server could generate a token that has the claim "logged in as admin" and provide that to a client. The client could then use that token to prove that it is logged in as admin. The tokens are signed by one party's private key (usually the server's), so that both parties (the other already being, by some suitable and trustworthy means, in possession of the corresponding public key) are able to verify that the token is legitimate. The tokens are designed to be compact, URL-safe, and usable especially in a web-browser single-sign-on (SSO) context. JWT claims can be typically used to pass identity of authenticated users between an identity provider and a service provider, or any other type of claims as required by business processes. \\
-$<$ $>$
 %\section{User Interfaces}
 %$<$Describe the logical characteristics of each interface between the software 
 %product and the users. This may include sample screen images, any GUI standards 
@@ -473,15 +472,106 @@ $<$ $>$
 %the user interface design should be documented in a separate user interface 
 %specification.$>$
 
+\clearpage
 \section{Functional Requirements}
-$<$ $>$
+\subsection{Functional Modeling}
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{./FuncPhoto/1.png}   
+    \caption{Register}
+\end{figure}
+
+
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{./FuncPhoto/2.png}   
+    \caption{Login}
+\end{figure}
+
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{./FuncPhoto/3.png}   
+    \caption{Show User Info}
+\end{figure}
+
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{./FuncPhoto/4.png}   
+    \caption{modify User Info}
+\end{figure}
+
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{./FuncPhoto/5.png}   
+    \caption{Display Exercise Course}
+\end{figure}
+
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{./FuncPhoto/6.png}   
+    \caption{Display Recover Course}
+\end{figure}
+
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{./FuncPhoto/7.png}   
+    \caption{Display User Courses}
+\end{figure}
+
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{./FuncPhoto/8.png}   
+    \caption{Display Recommend Courses}
+\end{figure}
+
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{./FuncPhoto/9.png}   
+    \caption{Display Course Evaluation}
+\end{figure}
+
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{./FuncPhoto/10.png}   
+    \caption{Add to My Course}
+\end{figure}
+
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{./FuncPhoto/11.png}   
+    \caption{Delete from My Course}
+\end{figure}
+
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{./FuncPhoto/12.png}   
+    \caption{Display User Report}
+\end{figure}
+
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{./FuncPhoto/13.png}   
+    \caption{Comment Courses}
+\end{figure}
+
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{./FuncPhoto/14.png}   
+    \caption{Collect Gesture Data}
+\end{figure}
+
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{./FuncPhoto/15.png}   
+    \caption{Compare Gesture Data}
+\end{figure}
+
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{./FuncPhoto/16.png}   
+    \caption{Notify Discrepancy Gesture }
+\end{figure}
+
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{./FuncPhoto/17.png}   
+    \caption{Evaluate Courses}
+\end{figure}
+
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{./FuncPhoto/18.png}   
+    \caption{Add New Courses}
+\end{figure}
 %\section{Hardware Interfaces}
 %$<$Describe the logical and physical characteristics of each interface between 
 %the software product and the hardware components of the system. This may include 
 %the supported device types, the nature of the data and control interactions 
 %between the software and the hardware, and communication protocols to be 
 %used.$>$
-
+\clearpage
 \section{Behavior Requirements}
 $<$ $>$
 
