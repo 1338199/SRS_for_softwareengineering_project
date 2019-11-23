@@ -60,7 +60,7 @@
         iSport\\
         \begin{figure}[h]
 		\flushright
-  		\includegraphics[width=.2\textwidth]{logo.png}
+  		\includegraphics[width=.2\textwidth]{figures/logo.png}
 		\end{figure}
         \vspace{0.8cm}
         \normalsize{Version \myversion approved}\\
@@ -81,13 +81,21 @@
 \chapter*{Revision History}
 
 \begin{center}
-    \begin{tabular}{|c|c|c|c|}
+    \begin{tabular}{|p{5cm}|p{3cm}|p{7cm}|p{2cm}|}
         \hline
 	    Name & Date & Reason For Changes & Version\\
         \hline
 	    Jiang Xiaohu & 2019.11.1 & Finish Introduction Part  & v1.0\\
         \hline
-	    31 & 32 & 33 & 34\\
+	    Wang Yicheng & 2019.11.2 & Finish Overview Part & v1.1\\
+        \hline
+        Xu Jingnan & 2019.11.3 & Finish External Requirements Part & v1.2\\
+        \hline
+        Xu Jingnan, Jiang Xiaohu, Wang Yicheng & 2019.11.4 & Finish Sequence Diagrams for Function Modeling Part& v1.3\\
+        \hline
+        Xu Jingnan & 2019.11.5 & Finish Function Modeling Part & v1.4\\
+        \hline
+        Jiang Xiaohu & 2019.11.6 & Finish Data Modeling Part  & v1.5\\
         \hline
     \end{tabular}
 \end{center}
@@ -129,7 +137,7 @@ This Software Requirements document is intended for:
 \end{itemize}
 The rest part of this SRS document contains the overall description of iSport, and iSport's specific, nonfunctional and other requirements which are shown in chapter\ref{Overall Description}, chapter\ref{Specific Requirements}, chapter\ref{Other Nonfunctional Requirements} and chapter\ref{Other Requirements} respectively.
 We suggest the readers begin with the overview sections and proceeding through the sections that are most pertinent to them:
-\begin{itemize}
+\begin{itemize} 
 	\item Developers and project testers are recommended to focus on specific and nonfunctional requirements part because theses parts will lead them to build qualified, safe and satisfying application and theses parts are all related to coding (construction and verification stage).
 	\item Clients, project managers and document writers should focus on the entire document since they are responsible for all the requirements specified in this paper.
 	\item Marketing staff have to focus on the functional part of iSport.
@@ -163,8 +171,8 @@ Injured Patients & One of iSport's potential customers who need recovering train
 Admin/Administrator & System administrator who is given specific permission for managing and controlling the system, e.g. updating the user's information, uploading new training courses.\\ \hline
 User Info & User's basic information including user's avatar, account name, tel-number and email address.\\ \hline
 Courses & Training courses including normal exercising training and recovering training.\\ \hline
-Normal Courses & Training courses which serve the sports fans and athletes.\\ \hline
-Recovering Courses & Training courses which serve the injured patients.\\ \hline
+Exercise Courses & Training courses which serve the sports fans and athletes.\\ \hline
+Recover Courses & Training courses which serve the injured patients.\\ \hline
 Static Courses & Training courses which instruct the users photo by photo.\\ \hline
 Dynamic Courses & Training courses which instruct the users according to a standard video.\\ \hline
 Appraisal Subsystem & Remark the user's performance by using a grade from 0 -100\\ \hline
@@ -194,30 +202,38 @@ Developers & Develop team including project managers, programmers, testers who a
 \end{longtable}
 
 \section{Document Conventions}
-This document follows MLA Format[1]. Bold-faced text has been used to emphasize sectionand sub-section headings. Highlighting is to point out the references of tables and figures. And italicized text is used to label and recognize special characters or terminologies\\
+This document follows MLA Format[1]. Bold-faced text has been used to emphasize sectionand sub-section headings. Highlighting is to point out the references of tables and figures. Underline is used in CRC's grammar analysis. And italicized text is used to label and recognize special characters or terminologies\\
 
-The SRS paper is written by latex[4], the packages we used to format the document including \small{$longtable, graphicx, subfig, utf8-inputenc,hyperref$ }and so on.\\
-And we modified the IEEE SRS latex template from Jean-Philippe Eisenbarth's github[5] according to the IEEE standard[2] mentioned in Frank F Tusi'book[3].
+\noindent The SRS paper is written by latex[6], the packages we used to format the document including \small{$longtable, graphicx, subfig, utf8-inputenc,hyperref$ }and so on.\\
 
+\noindent And we modified the IEEE SRS latex template from Jean-Philippe Eisenbarth's github[7] according to the IEEE standard[2] mentioned in Frank F Tusi'book[3].\\
+
+\noindent Finally, figures we use in the document is drawn by Staruml[8] and ProcessOn[9]
 
 \section{References and Acknowledgements}
-\subsubsection{Standard Reference}
-The standard we have followed are as follows:\\
+\subsubsection{Standard References}
+The standards we have followed are as follows:\\
 
 $[1]$ T. Russell, A. Brizee, E. Angeli, and R. Keck, “Mla formatting and style guide,” The Purdue OWL, 2010.\\
 
 $[2]$ I. S. E. S. Committee et al., “Ieee recommended practice for software re- quirements specifications,” IEEE organization, 1998.\\
 
 
-$[3]$ F. F. Tsui, O. Karam, and B. Bernal, Essentials of software engineering. Jones Bartlett Learning, 2016.
+$[3]$ F. F. Tsui, O. Karam, and B. Bernal, Essentials of software engineering. Jones Bartlett Learning, 2016.\\
 
-\subsubsection{Writing Tools Reference}
+$[4]$ R. S. Pressman, Software engineering: a practitioner’s approach. Palgrave Macmillan, 2005.\\
+
+$[5]$ P. Coad, E. Yourdon, and P. Coad, Object-oriented analysis. press Englewood Cliffs, NJ, 1991, vol. 2.
+\subsubsection{Writing Tools References}
 The writing tools we have used are as follows:\\
 
-$[4]$L. Lamport, LATEX: a document preparation system: user’s guide and reference manual. Addison-wesley, 1994.\\
+$[6]$L. Lamport, LATEX: a document preparation system: user’s guide and reference manual. Addison-wesley, 1994.\\
 
-$[5]$ J.-P. Eisenbarth, “Srs latex template under ieee standard,” \\http://https://github.com/jpeisenbarth/SRS-Tex.
+$[7]$ J.-P. Eisenbarth, “Srs latex template under ieee standard,” \\http://https://github.com/jpeisenbarth/SRS-Tex.\\
 
+$[8]$ S. Wong, “Staruml tutorial,” Connexions Web site, Sep, 2007.\\
+
+$[9]$ P. O. Team, “Process on tools,” https://www.processon.com/support.
 
 \chapter{Overall Description}
 \label{Overall Description}
@@ -474,14 +490,242 @@ $<$ $>$
 %specification.$>$
 
 \section{Functional Requirements}
-$<$ $>$
+\subsection{Data Modeling}
+\subsubsection{Scenario Description}
+First, \underline{users} need to register and input their information including \underline{account name}, \underline{password}, \underline{tel-number} and \underline{email address}. For users’ convenience, they can change their \underline{information} in later days.\\
+
+\noindent Only after the user log in, he/she can use the \underline{function} of \underline{iSport}. For \underline{athletes} and \underline{sports fans}, they can view the \underline{exercise course} page and select the one they favor, adding the course to \underline{my course} page. The same is to the \underline{injured patients}, they can go to the \underline{recover course} page and add their favorite courses. Before the users select their \underline{courses}, they can go to the comment page to consider the \underline{comments} given by other users. \\
+
+\noindent When the user decide to start the course, \underline{camera} will open and get the user’s \underline{postures}, meanwhile for \underline{dynamic courses}, the \underline{standard video} will start to play and for \underline{static course}, the \underline{images} will start to switch, then the user have to follow the video’s postures when exercising, at the same time, iSport will notify the user if his/her pass the posture and how to correct their postures. \\
+
+\noindent When the course is finished, user will get a \underline{grade} given by iSport to feedback their performance for the whole course. Of course, they user will get a detailed \underline{report} in report page.
+
+\noindent And for \underline{administrators}, they can upload new course to the iSport database.
+
+\subsubsection{Noun extraction}
+\begin{itemize}
+	\item User
+	\item Account name
+	\item Password
+	\item Tel-number
+	\item Email-address
+	\item Function
+	\item iSport System
+	\item Athletes
+	\item Sports fans
+	\item Exercise course
+	\item Injured patients
+	\item Recover course
+	\item Comments
+	\item Camera
+	\item Postures
+	\item Standard video
+	\item Dynamic course
+	\item Images
+	\item Static course
+	\item Grade
+	\item Report
+	\item My course
+	\item User information
+	\item Administrator
+\end{itemize}
+
+\subsubsection{Potential Classes}
+ Coad and Yourdon[5] lists six selection features for analyzing potential classes which is  referred by Pressman[4]:
+ \begin{enumerate}
+ 	\item Message Keeping
+ 	\item Services Requiring
+ 	\item Multiple Attributes
+ 	\item Public Attributes
+ 	\item Public Operations
+ 	\item Necessary Requirements
+ \end{enumerate}
+ Analysis Table is as follows:
+ 
+\begin{longtable}{|p{1.9in}|p{4in}|c|}
+xxxxx & xxxxxx  \kill
+\caption{Potential Classes Analysis Table\label{ptable}}\\ \hline
+\multicolumn{3}{|c|}{\bf Potential Classes Analysis}\\ \hline
+\endfirsthead
+\caption[]{(continued)}\\ \hline
+\multicolumn{3}{|c|}{\bf Potential Classes Analysis (continued)}\\
+\hline
+\endhead
+\hline
+\multicolumn{3}{|c|}{\bf Continued $\ldots$}\\
+\hline
+\endfoot
+\hline
+\multicolumn{3}{|c|}{\bf The End}\\
+\hline
+\endlastfoot
+\textbf{Potential Classes} & \textbf{Features Matched}  \\
+\hline
+User & Accepted: All match\\  \hline  
+Account name & Denied: Only matches 1\\ \hline
+Password & Denied: Only matches 1\\  \hline
+Tel-number & Denied: Only matches 1\\  \hline
+Email-address & Denied: Only matches 1\\ \hline
+User Info & Denied:Don't match 2,3,4,5,6\\ \hline
+Courses & Accepted: Satisfy all.\\ \hline
+Exercise Courses & Denied: Only matches 1\\ \hline
+Recover Courses & Denied: Only matches 1\\ \hline
+Static Courses & Accepted: Satisfy all\\ \hline
+Dynamic Courses & Accepted: Satisfy all\\ \hline
+iSport System& Don't match any\\ \hline
+Function& Denied: Don't match any\\ \hline 
+Athletes & Accepted: All match\\ \hline
+Sports fans& Accepted: All match\\ \hline 
+Sport Report & Accepted: All match\\ \hline 
+Injured patients & Accepted: All match\\ \hline 
+Comments & Denied: Only matches 1\\ \hline 
+Camera & Denied: Only matches 1\\ \hline 
+Postures & Denied:Only matches 1\\ \hline 
+Standard video & Denied:Only matches 1\\ \hline 
+Images & Denied:Only matches 1\\ \hline 
+Grade & Denied:Don't match 2,3,4,5,6\\ \hline
+My course & Denied:Don't match 2,3,4,5,6\\ \hline 
+Administrator & Accepted: All match\\ \hline
+\end{longtable}
+
+\subsubsection{Overview Class Diagram}
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.1\textwidth]{figures/classDiagram.png}
+\caption{Overview Class Diagram}
+\label{fig:classdia}
+\end{figure}
 %\section{Hardware Interfaces}
 %$<$Describe the logical and physical characteristics of each interface between 
 %the software product and the hardware components of the system. This may include 
 %the supported device types, the nature of the data and control interactions 
 %between the software and the hardware, and communication protocols to be 
 %used.$>$
+\subsubsection{Attributes Description}
+\begin{itemize}
+	\item User = User's ID + Account Name + Password + Tel-Number + Email Address + User's Courses
+	\item CourseReport = Report's ID + Postures' Similarities + User's Postures Wrong Parts + User's Final Grade
+	\item Course = Course ID + Course Type + Videos/Images + Course Name + Comments
+	\item Administrator = Administrator ID + Administrator Name
+	\item Takes = User's ID + Corresponding Course ID + User's Final Grade + Notification + User's Postures + Standard Postures + Course Report
+	\item SportsFans = User
+	\item Athletes  = User
+	\item DynamicCourse = Course with Videos
+	\item StaticCourse = Course with Images
+\end{itemize}
+\subsubsection{Operations Description}
+\begin{enumerate}
+	\item Class User
+	\begin{itemize}
+		\item Register(): Apply for an account.
+		\item Login(): Only after the user log in, he/she can use the functions of iSport.
+		\item ChangeInfo(): To change the user's old information.
+		\item ViewCourses(): View the courses, sports fans and athletes view exercise courses, patients view recover courses.
+		\item ViewReport(): View the user's last training's report.
+		\item SelectCourses(): Add courses to my courses. Sports fans and athletes add exercise courses, patients add recover courses.
+		\item ViewMyCourses(): View the user's selected courses.
+		\item DeleteMyCourses(): Remove courses from my courses.
+		\item ViewMyInfo():  View the user's info.
+		\item ViewRecommendedCourses(): View courses which is recommended by iSport system.
+		\item CommentCourse(): Comment on a course.
+	\end{itemize}
+	\item Class Course
+	\begin{itemize}
+		\item ViewComments(): View this course's comments given by users.
+		\item TakeCourse(): User decides to take this course.
+		\item ModifyContainer(): Modify the videos or images of this course.
+	\end{itemize}
+	\item Class Takes
+	\begin{itemize}
+		\item ComparePostures(): Compare postures of the user and the standard images/videos.
+		\item ShowNotification(): Show notification to the user when he/she takes courses.
+		\item Correction(): Find what part of postures the user did wrong.
+		\item GenerateReport(): Generate a report.
+		\item UpdateCourseComment(): Update the course's comments.
+	\end{itemize}
+	\item Class SportsFans and Class Athletes
+	\begin{itemize}
+		\item ViewCourses(): Sports fans and athletes view exercise courses.
+		\item SelectCourses(): Sports fans and athletes add exercise courses.
+	\end{itemize}
+	\item Class Patients
+	\begin{itemize}
+		\item ViewCourses(): Patients view recover courses.
+		\item SelectCourses(): Patients add recover courses.
+	\end{itemize}
+	\item Class DynamicCourse
+	\begin{itemize}
+		\item ModifyContainer(): Modify the videos of this course.
+	\end{itemize}
+	\item Class StaticCourse
+	\begin{itemize}
+		\item ModifyContainer(): Modify the images of this course.
+	\end{itemize}
+	\item CourseReport
+	\begin{itemize}
+		\item ViewReport(): View this report.
+	\end{itemize}
+\end{enumerate}
 
+\subsubsection{Class-Responsibility-Collaborator (CRC)}
+\begin{enumerate}
+	\item Class User
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1.1\textwidth]{figures/User.png}
+			\caption{CRC Card for Class User}
+			\label{fig:user}
+		\end{figure}
+	\item Class Course
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1.1\textwidth]{figures/Course.png}
+			\caption{CRC Card for Class User}
+			\label{fig:course}
+		\end{figure}
+	\item Class Takes
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1.1\textwidth]{figures/Takes.png}
+			\caption{CRC Card for Class Takes}
+			\label{fig:takes}
+		\end{figure}
+	\item Class CourseReport
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1.1\textwidth]{figures/CourseReport.png}
+			\caption{CRC Card for Class CourseReport}
+			\label{fig:cr}
+		\end{figure}
+	\item Class Patients
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1.1\textwidth]{figures/Patients.png}
+			\caption{CRC Card for Class Patients}
+			\label{fig:patients}
+		\end{figure}
+	\item Class Athletes and SportsFans
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1.1\textwidth]{figures/AthletesSports.png}
+			\caption{CRC Card for Class Athletes and SportsFans}
+			\label{fig:a_and_s}
+		\end{figure}
+	\item Class DynamicCourse
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1.1\textwidth]{figures/dynamic.png}
+			\caption{CRC Card for Class DynamicCourse}
+			\label{fig:dynamic}
+		\end{figure}
+	\item Class StaticCourse
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1.1\textwidth]{figures/static.png}
+			\caption{CRC Card for Class StaticCourse}
+			\label{fig:static}
+		\end{figure}
+\end{enumerate}
 \section{Behavior Requirements}
 $<$ $>$
 
