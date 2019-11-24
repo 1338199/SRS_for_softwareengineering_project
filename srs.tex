@@ -122,7 +122,7 @@ Both visual and audio notification are used in every course of the system to pro
 The selection and deletion of one user's favorable course is supported in personal information webpage and one can comment training he/she has taken on comment webpage to provide suggestions to other users.\\
 \\
  The personal information registering, changes is allowed via the application options. The system also contains a relational database containing a list of users, training images and videos.
-
+ 
 \section{Intended Audience}
 This Software Requirements document is intended for:
 \begin{itemize}
@@ -252,30 +252,36 @@ The user-case diagram in the folowing figure illustrates the user-case in the sy
 
 \section{Product Functionality}
 
-
 ISport contains these following key features:\\
-
 Let the user register their account of the website through their mobile phone or e-mail.\\
 
+ 
 Let the user log in to the system by correctly complete the log-in form. If the username is not in the database, the user will be prompted to register his/her account.\\
 
+ 
 User can modify his/her account information after logging in, including the username, e-mail address, phone number, gender, age and so on.\\
 
+ 
 Show all the sorted fitness courses in a list for user to choose in the fitness courses view page. \\
 
+ 
 Show a list of courses that the user has selected to learn before\\
 
+ 
 Show a list of recommended courses for the user by user's previous behavior \\
 
+ 
 Show the comment and evaluation of each courses in their detailed page\\
 
+ 
 Provide the add button for user to add a course he/she want to learn in the future and add the course to his/her courses list.\\
 
+ 
 Provide the delete button for user to remove a course he/she doesn't want to learn and remove the course from his/her courses list.\\
 
 
 Generate user's exercise report for watching and analyzing in the report page\\
-
+ 
 Give the user a space to leave his/her evaluation about the courses learnt before\\
 
 Capture and Collect the posture data of the user in front of the computer and store the data in the server.\\
@@ -292,9 +298,9 @@ Rate the user's posture on a scale of zero to ten to let the user know whether h
 
 System administrator can upload new courses to the system for users to choose and learn.\\
 
-
 \section{Users and Characteristics}
 
+ 
 \begin{center}
     \begin{tabular}{p{5cm}p{11cm}}
         \hline
@@ -311,47 +317,64 @@ System administrator can upload new courses to the system for users to choose an
     \end{tabular}
 \end{center}
 
+ 
 \section{Operating Environment}
 
-\subsubsection{Hardware}
+ 
+\subsubsection{Hardware}
 
+ 
 \noindent1. Server\\
 
+ 
 CPU: Intel Dual-Core 2.4GHz\\
 
+ 
 Memory: 8GB\\
 
+ 
 External Storage: 500G SSD\\
 
+ 
 Quantity: 1\\
 
+ 
 \noindent 2. Client(Minimum Configuration)\\
 
+ 
 CPU: Single-Core 1GHz\\
 
+ 
 Memory: 2G\\
 
+ 
 External Storage: 20GB HDD\\
 
+ 
+\subsubsection{Software}
 
-\subsubsection{Software}
-
+ 
 \noindent 1. Server\\
 
+ 
 Operating System: Ubuntu 18.04 LTS\\
 
+ 
 Database: MySQL\\
 
+ 
 Software and Library : Python, Spring, TensorFlow, Nginx\\
 
-
+ 
 \noindent 2. Client\\
 
+ 
 Operating System: Windows/macOS/Linux/Android/IOS\\
 
+ 
 Software: Browser\\
 
-
+ 
 \begin{center}
     \begin{tabular}{p{7cm}p{7cm}}
         \hline
@@ -370,39 +393,51 @@ Software: Browser\\
         Opera Opera & 31+\\
         \hline
 
+ 
     \end{tabular}
 \end{center}
 
+ 
 \section{Design and Implementation Constraints}
 
+ 
 \noindent 1. Memory: Server will have 500GB internal hard drive. Softwares and database cannot exceed this amount. System administrator must notice this limitation. And each user should follow the rule that the video data uploaded each time shall not be greater than 100M\\
 
-
+ 
 \noindent 2. Language requirements: software must be multilingual, including the following languages: English, Chinese\\
 
-
+ 
 \noindent 3. Number of user: each video uploaded must be one person. Each time this system can only deal with one person's data.\\
 
+ 
 \section{User Documentation}
 
+ 
 Along with this system: iSport, a user manual need to be written to help users understand how to operate the system. It would be written for nontechnical individuals and the level of content would differ considerably from a system administration guide, which is more detailed and complex. The user manual would follow common user documentation styles to be simple.\\
 
+ 
 Trying to use step-by-step instructions for users who firstly log in to the website, by showing messaging structures, quick references, tips and glossary of terms.\\
 
+ 
 User document can be written in HyperText Markup Language (HTML) or Portable Document Format (PDF) , which must describe the use of the software system.
 
+ 
 \section{Assumptions and Dependencies}
 
+ 
 It is assumed that the website will work correctly with every third-party operating
 system and compatible across all of the major browsers.\\
 
+ 
 Assumed that the web server always runs well without down or not responding.\\
 
-
+ 
 ISport provides two kinds of classes for user to choose: fitness classes and rehabilitation classes.\\
 
+ 
 Website visitors who have not been registered are only allowed to watch some demo videos, they are not allowed to upload their posture video data before registering.\\
 
+ 
 In addition to test their posture and attend into courses, members are also allowed to update their information, but they have to log in first.\\
 
 
@@ -502,101 +537,206 @@ The session communication data is transferred in form of json. Json is a lightwe
     \includegraphics[width=\linewidth]{./FuncPhoto/1.png}   
     \caption{Register}
 \end{figure}
-
+User should register before he uses our service. Function will ensure that the input is legal and not exists in database.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/2.png}   
     \caption{Login}
 \end{figure}
+User should log in before he uses our service. 
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/3.png}   
-    \caption{Show User Info}
+    \caption{Display User Info}
 \end{figure}
+The user information is displayed in user interface, such as username, user's course. Frontend will recall this API after logging in.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/4.png}   
     \caption{modify User Info}
 \end{figure}
+A user can modify his information, such as phone number, email address, username or password, anything but user ID.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/5.png}   
     \caption{Display Exercise Course}
 \end{figure}
+User can browse all course he has taken, then choose one to go on with. This API is for exercise courses.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/6.png}   
     \caption{Display Recover Course}
 \end{figure}
+User can browse all course he has taken, then choose one to go on with. This API is for recover courses. 
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/7.png}   
     \caption{Display User Courses}
 \end{figure}
+User can browse all course he has taken, then choose one to go on with. This API is for all courses. 
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/8.png}   
     \caption{Display Recommend Courses}
 \end{figure}
+Sometimes user need our system to give some recommends on courses.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/9.png}   
     \caption{Display Course Evaluation}
 \end{figure}
+Before user takes a course, he may browse the evaluation to judge whether a course is worth taking.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/10.png}   
     \caption{Add to My Course}
 \end{figure}
+User can add a favored course to his course list.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/11.png}   
     \caption{Delete from My Course}
 \end{figure}
+User can delete a unwished course from his course list.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/12.png}   
     \caption{Display User Report}
 \end{figure}
+A coach may review course takers' report to modify his course, make it more reliable.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/13.png}   
     \caption{Comment Courses}
 \end{figure}
+User can comment courses he takers.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/14.png}   
     \caption{Collect Gesture Data}
 \end{figure}
+System collects user's gesture data to analyze.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/15.png}   
     \caption{Compare Gesture Data}
 \end{figure}
+System compare user's gesture data with coach's.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/16.png}   
     \caption{Notify Discrepancy Gesture }
 \end{figure}
+If the user did wrong, System shows a notification to warn.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/17.png}   
     \caption{Evaluate Courses}
 \end{figure}
+User evaluate a course.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/18.png}   
     \caption{Add New Courses}
 \end{figure}
+Administrators add new courses to dababase.
+
+\subsection{Non-functional Modeling}
+\subsubsection{Performance requirement}
+\paragraph{Precision}
+\subparagraph{Input precision}
+Phone number: 11 digits, will convert to string in database. \\
+Email: numbers or letters, regex pattern: /\^([A-Za-z0-9\_$\backslash$-$\backslash$.])+$\backslash$.([A-Za-z]\{2,4\})\$/. \\
+\paragraph{Time speciality requirement}
+\subparagraph{Response time}
+\begin{itemize}
+    \item loading webpages time should be less than 1 second;
+    \item operating webpage widget should be less than 0.5 second;
+    \item when network is in good condition, the information loading time should be less than 0.5 second;
+    \item when network is in good condition, user comment and report should be up to date in 2 seconds after user add a new one.
+    \item adopt message middleware, update should be async, do not affect the main process UI response.
+    \item all pages updating should be async, and the priority of character loading is larger than photo's, time of updating character should be less than 0.1 second, time of updating photos should be less than 0.2 second.
+    \item all the page updating time should be less than 1 second.
+\end{itemize}
+\paragraph{Input and output requirement}
+\subparagraph{User register input}
+data name: user register input data
+implication: for usr registration, including user name and password
+data type: string
+constraint: consist of English letters and numbers, no special characters allowed. The length of username is between 6 and 12, password is between 6 and 18.
+\subparagraph{User comments input}
+data name: user comments input data
+implication: for user comments 
+data type: string
+constraint: length of comments should be at least 10 words and less than 500 words.
+
+\subsubsection{Safety requirement}
+The frontend and backend should both check the input data to ensure the user input won't cause a system crash.\\
+Some sensitive data, including phone numbers and email address is store in database, once divulged, the user may be affected by harass message. The database authorization should be granted with caution.\\ 
+Some days the system should be deployed in disturbed system, maintaining consistency by consensus algorithm, avoiding data safety, minimize the danger of dropping data caused by crash.\\
+
+\subsubsection{Flexibility requirement}
+We use iterative development, in a week, for a development cycle, check every three days to discuss the progress of the development, after the end of each iteration to joint test of existing functions, to ensure that when the former system can run normally after discussing the development of the next increment details and concrete tasks, we carried out in accordance with the system module division of labor, each member is responsible for the view, model, control device and block chain one of four modules or some modules of all the work, each mold piece in have different emphases, members based on their ability to select the corresponding module development,
+Docking test will be conducted between modules after completion of development\\
+The development mode of test-driven development is adopted. After the development task is determined, the corresponding unit test is written first. The code written during functional development needs to pass the unit test written at the beginning to ensure the writing efficiency and quality of the code.\\
+Git is adopted for project management, and corresponding records are kept for each function update and version iteration. If the plan needs to be changed or improved, the most appropriate version can be selected to continue development based on the original development.
+This approach reduces the additional development effort due to planned changes and allows us to be more flexible with the changes we encounter during development.\\
+We will adopt a backward compatible development plan in the development process, that is, our system can be well adapted to the new environment in the future, and the client supports a variety of system adaptations, and can work well on different types of devices.\\
+The relevant interface information of the system is stored in the database. If the software interface of the foreign department changes during the system operation, the content in the database can be modified to adapt to the change\\
+
+\subsubsection{Transparency requirement}
+The operating rules of the whole system are open and transparent, so for the program, the whole department
+It must be open source, and all data content is public.
+
+\subsubsection{Tamper proof requirement}
+Participation for data exchange between each node of the whole system is need to trust each other, the operation rules of the whole system is open and transparent, all of the data content is public, due to the scope of the rules specified in the system and time range, between nodes is not cannot deceive other nodes, and the system only identified most node recognition, also do not reigned modification.
+
+\subsubsection{Reliability requirement}
+The entire system will be distributed in the form of a database so that each participating node can get a copy of the complete database.
+Unless more than 51\% of nodes in the entire system can be controlled at the same time, changes to the database on a single node are not valid and cannot affect the data content on other nodes.
+
+\subsubsection{Usability requirement}
+\begin{itemize}
+    \item The unified interface style and friendly user interaction design make it more convenient for users to acquire
+The information you want.
+    \item Reduce the user's learning cost as far as possible, convenient operation, reasonable operation process, the completion of the operation when the unified standard prompt information.
+    \item Support no computer use experience, less computer use experience and have more computer use experience users can easily use the system
+    \item The system has a certain fault-tolerant and anti-interference ability, in the non-hardware fault or non-communication fault, the system can ensure the normal operation, and there are enough prompt information to help users effectively and correctly complete the task.
+    \item The system has some flexibility, can prompt the user how to operate
+    \item The system is universal, easy to learn and practical
+    \item The site features fewer features and fewer redundant and annoying features.
+\end{itemize}
+
+\subsubsection{Maintainability requirement}
+\begin{itemize}
+    \item Maintainability is the ability to modify problems or defects in existing system functionality without affecting the rest of the system.
+When developers create and design system architectures, they must consider the following elements in order to improve system maintainability: low-coupling, high-in-aggregate systems.
+    \item This system will adopt strict software engineering specification to develop, and adopt good design mode to ensure the low coupling and high cohesion between the modules.
+    \item All the code of the system will be detailed comments, for all the code of the system, we will generate detailed technical documentation.
+For the system development process may appear error, we will document the way a detailed list of error and corresponding error message.
+    \item Relevant documentation should be clear, complete and consistent
+    \item At the same time, it should have good function, data extensibility and adaptability to the environment
+\end{itemize}
+
+\subsubsection{Expandability requirement}
+After the completion of the system, no major changes should be made to the existing system or affect the whole system
+In this way, it is convenient to add corresponding functions according to the needs of users in the later maintenance process without affecting the normal operation of other function modules of the system.
+In addition, all documentation should be detailed and complete so that other recipients or new developers can quickly learn about the system and properly update and enhance it.
+
+\subsubsection{Stability requirement}
+The website can normally complete all functional requirements, and ensure that the server runs for a long time without obstacles.
+Fault repair time is generally controlled within 3 hours, unless there is a vicious attack, virus damage, insufficient system resources, hardware failure, operating system crash network interruption, do not allow memory leak.
+The system is required to be able to withstand the warning storm and the impact of the large amount of data, not memory overflow and other phenomena.
+
+\subsubsection{Operational environment convertibility requirements}
+This web page can be self-adapted to normal operation on the mobile phone.
+
 
 \subsection{Data Modeling}
 \subsubsection{Scenario Description}
 First, \underline{users} need to register and input their information including \underline{account name}, \underline{password}, \underline{tel-number} and \underline{email address}. For users’ convenience, they can change their \underline{information} in later days.\\
-
 \noindent Only after the user log in, he/she can use the \underline{function} of \underline{iSport}. For \underline{athletes} and \underline{sports fans}, they can view the \underline{exercise course} page and select the one they favor, adding the course to \underline{my course} page. The same is to the \underline{injured patients}, they can go to the \underline{recover course} page and add their favorite courses. Before the users select their \underline{courses}, they can go to the comment page to consider the \underline{comments} given by other users. \\
-
 \noindent When the user decide to start the course, \underline{camera} will open and get the user’s \underline{postures}, meanwhile for \underline{dynamic courses}, the \underline{standard video} will start to play and for \underline{static course}, the \underline{images} will start to switch, then the user have to follow the video’s postures when exercising, at the same time, iSport will notify the user if his/her pass the posture and how to correct their postures. \\
-
 \noindent When the course is finished, user will get a \underline{grade} given by iSport to feedback their performance for the whole course. Of course, they user will get a detailed \underline{report} in report page.
 
 \noindent And for \underline{administrators}, they can upload new course to the iSport database.
