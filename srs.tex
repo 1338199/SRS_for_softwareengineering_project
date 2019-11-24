@@ -237,33 +237,46 @@ $[9]$ P. O. Team, “Process on tools,” https://www.processon.com/support.
 
 \chapter{Overall Description}
 \label{Overall Description}
- 
+
 \section{Product Perspective}
- 
+
 ISport is a web system developed by isport team, aimming at posture correcting with the assist of camera.\\
- 
-The context diagram in the folowing figure illustrates the external entities and system interfaces. The system is expected to evolve over at least three releases, ultimately allowing for complete streamlining of the posture correcting process, fitness classes and rehabilitation classes for learning.
- 
+
+The user-case diagram in the folowing figure illustrates the user-case in the system. The system is expected to evolve over at least three releases, ultimately allowing for complete streamlining of the posture correcting process, fitness classes and rehabilitation classes for learning.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.0\textwidth]{figures/big-user-case.png}
+	\caption{overall user-case diagram}
+\end{figure}
+
 \section{Product Functionality}
- 
 
 ISport contains these following key features:\\
 Let the user register their account of the website through their mobile phone or e-mail.\\
- 
+
+ 
 Let the user log in to the system by correctly complete the log-in form. If the username is not in the database, the user will be prompted to register his/her account.\\
- 
+
+ 
 User can modify his/her account information after logging in, including the username, e-mail address, phone number, gender, age and so on.\\
- 
+
+ 
 Show all the sorted fitness courses in a list for user to choose in the fitness courses view page. \\
- 
+
+ 
 Show a list of courses that the user has selected to learn before\\
- 
+
+ 
 Show a list of recommended courses for the user by user's previous behavior \\
- 
+
+ 
 Show the comment and evaluation of each courses in their detailed page\\
- 
+
+ 
 Provide the add button for user to add a course he/she want to learn in the future and add the course to his/her courses list.\\
- 
+
+ 
 Provide the delete button for user to remove a course he/she doesn't want to learn and remove the course from his/her courses list.\\
 
 
@@ -286,7 +299,8 @@ Rate the user's posture on a scale of zero to ten to let the user know whether h
 System administrator can upload new courses to the system for users to choose and learn.\\
 
 \section{Users and Characteristics}
- 
+
+ 
 \begin{center}
     \begin{tabular}{p{5cm}p{11cm}}
         \hline
@@ -302,45 +316,65 @@ System administrator can upload new courses to the system for users to choose an
         \hline
     \end{tabular}
 \end{center}
- 
+
+ 
 \section{Operating Environment}
- 
+
+ 
 \subsubsection{Hardware}
- 
+
+ 
 \noindent1. Server\\
- 
+
+ 
 CPU: Intel Dual-Core 2.4GHz\\
- 
+
+ 
 Memory: 8GB\\
- 
+
+ 
 External Storage: 500G SSD\\
- 
+
+ 
 Quantity: 1\\
- 
+
+ 
 \noindent 2. Client(Minimum Configuration)\\
- 
+
+ 
 CPU: Single-Core 1GHz\\
- 
+
+ 
 Memory: 2G\\
- 
+
+ 
 External Storage: 20GB HDD\\
- 
+
+ 
 \subsubsection{Software}
- 
+
+ 
 \noindent 1. Server\\
- 
+
+ 
 Operating System: Ubuntu 18.04 LTS\\
- 
+
+ 
 Database: MySQL\\
- 
+
+ 
 Software and Library : Python, Spring, TensorFlow, Nginx\\
- 
+
+ 
 \noindent 2. Client\\
- 
+
+ 
 Operating System: Windows/macOS/Linux/Android/IOS\\
- 
+
+ 
 Software: Browser\\
- 
+
+ 
 \begin{center}
     \begin{tabular}{p{7cm}p{7cm}}
         \hline
@@ -358,37 +392,52 @@ Software: Browser\\
         \hline
         Opera Opera & 31+\\
         \hline
- 
+
+ 
     \end{tabular}
 \end{center}
- 
+
+ 
 \section{Design and Implementation Constraints}
- 
+
+ 
 \noindent 1. Memory: Server will have 500GB internal hard drive. Softwares and database cannot exceed this amount. System administrator must notice this limitation. And each user should follow the rule that the video data uploaded each time shall not be greater than 100M\\
- 
+
+ 
 \noindent 2. Language requirements: software must be multilingual, including the following languages: English, Chinese\\
- 
+
+ 
 \noindent 3. Number of user: each video uploaded must be one person. Each time this system can only deal with one person's data.\\
- 
+
+ 
 \section{User Documentation}
- 
+
+ 
 Along with this system: iSport, a user manual need to be written to help users understand how to operate the system. It would be written for nontechnical individuals and the level of content would differ considerably from a system administration guide, which is more detailed and complex. The user manual would follow common user documentation styles to be simple.\\
- 
+
+ 
 Trying to use step-by-step instructions for users who firstly log in to the website, by showing messaging structures, quick references, tips and glossary of terms.\\
- 
+
+ 
 User document can be written in HyperText Markup Language (HTML) or Portable Document Format (PDF) , which must describe the use of the software system.
- 
+
+ 
 \section{Assumptions and Dependencies}
- 
+
+ 
 It is assumed that the website will work correctly with every third-party operating
 system and compatible across all of the major browsers.\\
- 
+
+ 
 Assumed that the web server always runs well without down or not responding.\\
- 
+
+ 
 ISport provides two kinds of classes for user to choose: fitness classes and rehabilitation classes.\\
- 
+
+ 
 Website visitors who have not been registered are only allowed to watch some demo videos, they are not allowed to upload their posture video data before registering.\\
- 
+
+ 
 In addition to test their posture and attend into courses, members are also allowed to update their information, but they have to log in first.\\
 
 
@@ -918,7 +967,102 @@ Administrator & Accepted: All match\\ \hline
 		\end{figure}
 \end{enumerate}
 \section{Behavior Requirements}
-$<$ $>$
+
+\subsubsection{Postural correction stateschart}
+
+This stateschart describe the states transition during the process of postural correction.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.0\textwidth]{figures/stateschart1.png}
+	\caption{Postural correction statechart}
+\end{figure}
+
+
+\begin{center}
+    \begin{tabular}{p{5cm}p{12cm}}
+        \hline
+	    Users & Desc\\
+        \hline
+	    Initialization state &  This state is the initialized posture correction process. User choose to turn on the camera capture, the state will shift to waiting for analyzing state \\
+        \hline
+	    Waiting for analyzing state & This state is waiting for analyzing. If the camera capture correctly, the state will shift to waiting for comparison state; if the video is invalid, the state will shift to video failure state; if the user cancel the uploading process, the state will shift to canceling state.\\
+        \hline
+        Waiting for comparison state & This state is waiting for comparison. The system will comparing and show the skeleton, and the state will shift to waiting for waiting for marking state\\
+        \hline
+        Waiting for marking state & This state is waiting for marking. After comparing, the system will mark user's posture, and the state will shift to have evaluated state\\
+        \hline
+        Video failure state & This state means the video is invalid, and the state will shift to terminate state\\
+        \hline
+        Canceling state & This state means the process was canceled by user, and the state will shift to terminate state\\
+        \hline
+        Have evaluated state & This state means the posture is finishing evaluation, and the state will shift to terminate state\\
+        \hline
+    \end{tabular}
+\end{center}
+
+\subsubsection{Course Evaluation statechart}
+
+This stateschart describe the states transition during the process of course evaluation.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.0\textwidth]{figures/stateschart2.png}
+	\caption{Course evaluation statechart}
+\end{figure}
+
+
+\begin{center}
+    \begin{tabular}{p{5cm}p{12cm}}
+        \hline
+	    Users & Desc\\
+        \hline
+	    Initialization state &  This state is the initialized posture correction process. User choose to evaluate the course, the state will shift to editing state \\
+        \hline
+	    Editing state & This state is waiting for analyzing. If user is inputing bytes, the state will not change; if the user choose to confirm the evaluation, the state will shift to confirm state; if the user cancel the evaluation process, the state will shift to canceling state.\\
+        \hline
+        Confirm state & This state means the evaluation process is finished. If the user return to modify the comment, the state will shift to terminate state. In other condition, the state will shift to terminate state\\
+        \hline
+        Canceling state & This state means the process was canceled by user, and the state will shift to terminate state\\
+        \hline
+    \end{tabular}
+\end{center}
+
+
+
+\subsubsection{Posture information flow stateschart}
+
+This stateschart describe the states transition of posture infomation flow
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.0\textwidth]{figures/stateschart3.png}
+	\caption{Posture information flow statechart}
+\end{figure}
+
+
+\begin{center}
+    \begin{tabular}{p{5cm}p{12cm}}
+        \hline
+	    Users & Desc\\
+        \hline
+	    Initialization state &  This state is the initialized posture correction process. User choose to open the camera, the state will shift to waiting for recording state \\
+        \hline
+        Recording state & This state means the posture information is being recording. If the camera is recording video, the state will not change; if the skeleton data is detected, the state will shift to comparison state; if the user cancel the recording process, the state will shift to canceling state.\\
+        \hline
+        Comparison state & This state means the posture information is being comparing with the standard posture data. If the skeleton data is finished calculating, the state will shift to calculation state; if the user cancel the comparison process, the state will shift to canceling state.\\
+        \hline
+        Calculation state & This state means the posture information is being calculated after comparing with the standard posture data to get the mark of user's posture. If the skeleton data is finished marking the posture, the state will shift to showing result state; if the user cancel the calculation process, the state will shift to canceling state.\\
+        \hline
+        Canceling state & This state means the process was canceled by user, and the state will shift to terminate state\\
+        \hline
+        Show result state & This state means the posture information is finishing evaluation, the mark and suggestions will be show in user's interface, and the state will shift to terminate state\\
+        \hline
+    \end{tabular}
+\end{center}
+
+
+
 
 %\section{Software Interfaces}
 %$<$Describe the connections between this product and other specific software 
