@@ -496,92 +496,109 @@ The session communication data is transferred in form of json. Json is a lightwe
     \includegraphics[width=\linewidth]{./FuncPhoto/1.png}   
     \caption{Register}
 \end{figure}
-
+User should register before he uses our service. Function will ensure that the input is legal and not exists in database.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/2.png}   
     \caption{Login}
 \end{figure}
+User should log in before he uses our service. 
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/3.png}   
-    \caption{Show User Info}
+    \caption{Display User Info}
 \end{figure}
+The user information is displayed in user interface, such as username, user's course. Frontend will recall this API after logging in.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/4.png}   
     \caption{modify User Info}
 \end{figure}
+A user can modify his information, such as phone number, email address, username or password, anything but user ID.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/5.png}   
     \caption{Display Exercise Course}
 \end{figure}
+User can browse all course he has taken, then choose one to go on with. This API is for exercise courses.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/6.png}   
     \caption{Display Recover Course}
 \end{figure}
+User can browse all course he has taken, then choose one to go on with. This API is for recover courses. 
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/7.png}   
     \caption{Display User Courses}
 \end{figure}
+User can browse all course he has taken, then choose one to go on with. This API is for all courses. 
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/8.png}   
     \caption{Display Recommend Courses}
 \end{figure}
+Sometimes user need our system to give some recommends on courses.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/9.png}   
     \caption{Display Course Evaluation}
 \end{figure}
+Before user takes a course, he may browse the evaluation to judge whether a course is worth taking.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/10.png}   
     \caption{Add to My Course}
 \end{figure}
+User can add a favored course to his course list.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/11.png}   
     \caption{Delete from My Course}
 \end{figure}
+User can delete a unwished course from his course list.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/12.png}   
     \caption{Display User Report}
 \end{figure}
+A coach may review course takers' report to modify his course, make it more reliable.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/13.png}   
     \caption{Comment Courses}
 \end{figure}
+User can comment courses he takers.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/14.png}   
     \caption{Collect Gesture Data}
 \end{figure}
+System collects user's gesture data to analyze.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/15.png}   
     \caption{Compare Gesture Data}
 \end{figure}
+System compare user's gesture data with coach's.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/16.png}   
     \caption{Notify Discrepancy Gesture }
 \end{figure}
+If the user did wrong, System shows a notification to warn.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/17.png}   
     \caption{Evaluate Courses}
 \end{figure}
+User evaluate a course.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/18.png}   
     \caption{Add New Courses}
 \end{figure}
+Administrators add new courses to dababase.
 
 \subsection{Data Modeling}
 \subsubsection{Scenario Description}
