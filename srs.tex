@@ -555,7 +555,7 @@ The user information is displayed in user interface, such as username, user's co
     \includegraphics[width=\linewidth]{./FuncPhoto/4.png}   
     \caption{modify User Info}
 \end{figure}
-A user can modify his information, such as phone number, email address, username or password, anything but user ID.
+A user can modify his information, such as phone number, email address, username or password, anything but user ID. User identification should be checked once he requests a modification.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/5.png}   
@@ -579,7 +579,7 @@ User can browse all course he has taken, then choose one to go on with. This API
     \includegraphics[width=\linewidth]{./FuncPhoto/8.png}   
     \caption{Display Recommend Courses}
 \end{figure}
-Sometimes user need our system to give some recommends on courses.
+Sometimes user need our system to give some recommends on courses. The recommend system is based on user's course which he has taken.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/9.png}   
@@ -591,13 +591,13 @@ Before user takes a course, he may browse the evaluation to judge whether a cour
     \includegraphics[width=\linewidth]{./FuncPhoto/10.png}   
     \caption{Add to My Course}
 \end{figure}
-User can add a favored course to his course list.
+User can add a favored course to his course list. He can browse his favored course in user center.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/11.png}   
     \caption{Delete from My Course}
 \end{figure}
-User can delete a unwished course from his course list.
+If User decide not to take a course any more, he can delete a unwished course from his course list.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/12.png}   
@@ -609,129 +609,38 @@ A coach may review course takers' report to modify his course, make it more reli
     \includegraphics[width=\linewidth]{./FuncPhoto/13.png}   
     \caption{Comment Courses}
 \end{figure}
-User can comment courses he takers.
+User can comment courses he takes. The comment will be shown on a forum, users can communicate with each other.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/14.png}   
     \caption{Collect Gesture Data}
 \end{figure}
-System collects user's gesture data to analyze.
+System collects user's gesture data to analyze. The data will only be used for analyzing whether user does is wrong. 
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/15.png}   
     \caption{Compare Gesture Data}
 \end{figure}
-System compare user's gesture data with coach's.
+System compare user's gesture data with coach's. If dismatched, a notification will be generated, and system will send it to user's end.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/16.png}   
     \caption{Notify Discrepancy Gesture }
 \end{figure}
-If the user did wrong, System shows a notification to warn.
+If the user did wrong, System generate a notification and send to user's browser, user can get a wain fron backend and knoew what he does is wrong.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/17.png}   
     \caption{Evaluate Courses}
 \end{figure}
-User evaluate a course.
+After user learns a course, user can evaluate a course by his learning achievement. If user dislikes this course, he can also submit a negative evaluation.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/18.png}   
     \caption{Add New Courses}
 \end{figure}
-Administrators add new courses to dababase.
-
-\subsection{Non-functional Modeling}
-\subsubsection{Performance requirement}
-\paragraph{Precision}
-\subparagraph{Input precision}
-Phone number: 11 digits, will convert to string in database. \\
-Email: numbers or letters, regex pattern: /\^([A-Za-z0-9\_$\backslash$-$\backslash$.])+$\backslash$.([A-Za-z]\{2,4\})\$/. \\
-\paragraph{Time speciality requirement}
-\subparagraph{Response time}
-\begin{itemize}
-    \item loading webpages time should be less than 1 second;
-    \item operating webpage widget should be less than 0.5 second;
-    \item when network is in good condition, the information loading time should be less than 0.5 second;
-    \item when network is in good condition, user comment and report should be up to date in 2 seconds after user add a new one.
-    \item adopt message middleware, update should be async, do not affect the main process UI response.
-    \item all pages updating should be async, and the priority of character loading is larger than photo's, time of updating character should be less than 0.1 second, time of updating photos should be less than 0.2 second.
-    \item all the page updating time should be less than 1 second.
-\end{itemize}
-\paragraph{Input and output requirement}
-\subparagraph{User register input}
-data name: user register input data
-implication: for usr registration, including user name and password
-data type: string
-constraint: consist of English letters and numbers, no special characters allowed. The length of username is between 6 and 12, password is between 6 and 18.
-\subparagraph{User comments input}
-data name: user comments input data
-implication: for user comments 
-data type: string
-constraint: length of comments should be at least 10 words and less than 500 words.
-
-\subsubsection{Safety requirement}
-The frontend and backend should both check the input data to ensure the user input won't cause a system crash.\\
-Some sensitive data, including phone numbers and email address is store in database, once divulged, the user may be affected by harass message. The database authorization should be granted with caution.\\ 
-Some days the system should be deployed in disturbed system, maintaining consistency by consensus algorithm, avoiding data safety, minimize the danger of dropping data caused by crash.\\
-
-\subsubsection{Flexibility requirement}
-We use iterative development, in a week, for a development cycle, check every three days to discuss the progress of the development, after the end of each iteration to joint test of existing functions, to ensure that when the former system can run normally after discussing the development of the next increment details and concrete tasks, we carried out in accordance with the system module division of labor, each member is responsible for the view, model, control device and block chain one of four modules or some modules of all the work, each mold piece in have different emphases, members based on their ability to select the corresponding module development,
-Docking test will be conducted between modules after completion of development\\
-The development mode of test-driven development is adopted. After the development task is determined, the corresponding unit test is written first. The code written during functional development needs to pass the unit test written at the beginning to ensure the writing efficiency and quality of the code.\\
-Git is adopted for project management, and corresponding records are kept for each function update and version iteration. If the plan needs to be changed or improved, the most appropriate version can be selected to continue development based on the original development.
-This approach reduces the additional development effort due to planned changes and allows us to be more flexible with the changes we encounter during development.\\
-We will adopt a backward compatible development plan in the development process, that is, our system can be well adapted to the new environment in the future, and the client supports a variety of system adaptations, and can work well on different types of devices.\\
-The relevant interface information of the system is stored in the database. If the software interface of the foreign department changes during the system operation, the content in the database can be modified to adapt to the change\\
-
-\subsubsection{Transparency requirement}
-The operating rules of the whole system are open and transparent, so for the program, the whole department
-It must be open source, and all data content is public.
-
-\subsubsection{Tamper proof requirement}
-Participation for data exchange between each node of the whole system is need to trust each other, the operation rules of the whole system is open and transparent, all of the data content is public, due to the scope of the rules specified in the system and time range, between nodes is not cannot deceive other nodes, and the system only identified most node recognition, also do not reigned modification.
-
-\subsubsection{Reliability requirement}
-The entire system will be distributed in the form of a database so that each participating node can get a copy of the complete database.
-Unless more than 51\% of nodes in the entire system can be controlled at the same time, changes to the database on a single node are not valid and cannot affect the data content on other nodes.
-
-\subsubsection{Usability requirement}
-\begin{itemize}
-    \item The unified interface style and friendly user interaction design make it more convenient for users to acquire
-The information you want.
-    \item Reduce the user's learning cost as far as possible, convenient operation, reasonable operation process, the completion of the operation when the unified standard prompt information.
-    \item Support no computer use experience, less computer use experience and have more computer use experience users can easily use the system
-    \item The system has a certain fault-tolerant and anti-interference ability, in the non-hardware fault or non-communication fault, the system can ensure the normal operation, and there are enough prompt information to help users effectively and correctly complete the task.
-    \item The system has some flexibility, can prompt the user how to operate
-    \item The system is universal, easy to learn and practical
-    \item The site features fewer features and fewer redundant and annoying features.
-\end{itemize}
-
-\subsubsection{Maintainability requirement}
-\begin{itemize}
-    \item Maintainability is the ability to modify problems or defects in existing system functionality without affecting the rest of the system.
-When developers create and design system architectures, they must consider the following elements in order to improve system maintainability: low-coupling, high-in-aggregate systems.
-    \item This system will adopt strict software engineering specification to develop, and adopt good design mode to ensure the low coupling and high cohesion between the modules.
-    \item All the code of the system will be detailed comments, for all the code of the system, we will generate detailed technical documentation.
-For the system development process may appear error, we will document the way a detailed list of error and corresponding error message.
-    \item Relevant documentation should be clear, complete and consistent
-    \item At the same time, it should have good function, data extensibility and adaptability to the environment
-\end{itemize}
-
-\subsubsection{Expandability requirement}
-After the completion of the system, no major changes should be made to the existing system or affect the whole system
-In this way, it is convenient to add corresponding functions according to the needs of users in the later maintenance process without affecting the normal operation of other function modules of the system.
-In addition, all documentation should be detailed and complete so that other recipients or new developers can quickly learn about the system and properly update and enhance it.
-
-\subsubsection{Stability requirement}
-The website can normally complete all functional requirements, and ensure that the server runs for a long time without obstacles.
-Fault repair time is generally controlled within 3 hours, unless there is a vicious attack, virus damage, insufficient system resources, hardware failure, operating system crash network interruption, do not allow memory leak.
-The system is required to be able to withstand the warning storm and the impact of the large amount of data, not memory overflow and other phenomena.
-
-\subsubsection{Operational environment convertibility requirements}
-This web page can be self-adapted to normal operation on the mobile phone.
-
-
+The courses data need be keeped updating. A coach, most of the time an administrator can add new courses to dababase. After auditing, the course will be displayed on our website. 
+ 
 \subsection{Data Modeling}
 \subsubsection{Scenario Description}
 First, \underline{users} need to register and input their information including \underline{account name}, \underline{password}, \underline{tel-number} and \underline{email address}. For users’ convenience, they can change their \underline{information} in later days.\\
@@ -1127,41 +1036,89 @@ This stateschart describe the states transition of posture infomation flow
 \chapter{Other Nonfunctional Requirements}
 \label{Other Nonfunctional Requirements}
 \section{Performance Requirements}
-$<$If there are performance requirements for the product under various 
-circumstances, state them here and explain their rationale, to help the 
-developers understand the intent and make suitable design choices. Specify the 
-timing relationships for real time systems. Make such requirements as specific 
-as possible. You may need to state performance requirements for individual 
-functional requirements or features.$>$
+\subsection{Precision}
+\subsubsection{Input precision}
+Phone number: 11 digits, will convert to string in database. \\
+Email: numbers or letters, regex pattern: /\^([A-Za-z0-9\_$\backslash$-$\backslash$.])+$\backslash$.([A-Za-z]\{2,4\})\$/. \\
+
+\subsection{Time speciality requirement}
+\subsubsection{Response time}
+\begin{itemize}
+    \item loading webpages time should be less than 1 second;
+    \item operating webpage widget should be less than 0.5 second;
+    \item when network is in good condition, the information loading time should be less than 0.5 second;
+    \item when network is in good condition, user comment and report should be up to date in 2 seconds after user add a new one.
+    \item adopt message middleware, update should be async, do not affect the main process UI response.
+    \item all pages updating should be async, and the priority of character loading is larger than photo's, time of updating character should be less than 0.1 second, time of updating photos should be less than 0.2 second.
+    \item all the page updating time should be less than 1 second.
+\end{itemize}
+
+\subsection{Input and output requirement}
+\subsubsection{User register input}
+data name: user register input data
+implication: for usr registration, including user name and password
+data type: string
+constraint: consist of English letters and numbers, no special characters allowed. The length of username is between 6 and 12, password is between 6 and 18.
+\subsubsection{User comments input}
+data name: user comments input data
+implication: for user comments 
+data type: string
+constraint: length of comments should be at least 10 words and less than 500 words.
 
 \section{Safety and Security Requirements}
-$<$Specify those requirements that are concerned with possible loss, damage, or 
-harm that could result from the use of the product. Define any safeguards or 
-actions that must be taken, as well as actions that must be prevented. Refer to 
-any external policies or regulations that state safety issues that affect the 
-product’s design or use. Define any safety certifications that must be 
-satisfied.$>$
-%\section{Security Requirements}
-$<$Specify any requirements regarding security or privacy issues surrounding use 
-of the product or protection of the data used or created by the product. Define 
-any user identity authentication requirements. Refer to any external policies or 
-regulations containing security issues that affect the product. Define any 
-security or privacy certifications that must be satisfied.$>$
+The frontend and backend should both check the input data to ensure the user input won't cause a system crash.\\
+Some sensitive data, including phone numbers and email address is store in database, once divulged, the user may be affected by harass message. The database authorization should be granted with caution.\\ 
+Some days the system should be deployed in disturbed system, maintaining consistency by consensus algorithm, avoiding data safety, minimize the danger of dropping data caused by crash.\\
 
 \section{Software Quality Attributes}
-$<$Specify any additional quality characteristics for the product that will be 
-important to either the customers or the developers. Some to consider are: 
-adaptability, availability, correctness, flexibility, interoperability, 
-maintainability, portability, reliability, reusability, robustness, testability, 
-and usability. Write these to be specific, quantitative, and verifiable when 
-possible. At the least, clarify the relative preferences for various attributes, 
-such as ease of use over ease of learning.$>$
+\subsection{Flexibility Requirement}
+We use iterative development, in a week, for a development cycle, check every three days to discuss the progress of the development, after the end of each iteration to joint test of existing functions, to ensure that when the former system can run normally after discussing the development of the next increment details and concrete tasks, we carried out in accordance with the system module division of labor, each member is responsible for the view, model, control device and block chain one of four modules or some modules of all the work, each mold piece in have different emphases, members based on their ability to select the corresponding module development,
+Docking test will be conducted between modules after completion of development\\
+The development mode of test-driven development is adopted. After the development task is determined, the corresponding unit test is written first. The code written during functional development needs to pass the unit test written at the beginning to ensure the writing efficiency and quality of the code.\\
+Git is adopted for project management, and corresponding records are kept for each function update and version iteration. If the plan needs to be changed or improved, the most appropriate version can be selected to continue development based on the original development.
+This approach reduces the additional development effort due to planned changes and allows us to be more flexible with the changes we encounter during development.\\
+We will adopt a backward compatible development plan in the development process, that is, our system can be well adapted to the new environment in the future, and the client supports a variety of system adaptations, and can work well on different types of devices.\\
+The relevant interface information of the system is stored in the database. If the software interface of the foreign department changes during the system operation, the content in the database can be modified to adapt to the change\\
 
-%\section{Business Rules}
-%$<$List any operating principles about the product, such as which individuals or 
-%roles can perform which functions under specific circumstances. These are not 
-%functional requirements in themselves, but they may imply certain functional 
-%requirements to enforce the rules.$>$
+\subsection{Reliability Requirement}
+The entire system will be distributed in the form of a database so that each participating node can get a copy of the complete database.
+Unless more than 51\% of nodes in the entire system can be controlled at the same time, changes to the database on a single node are not valid and cannot affect the data content on other nodes.
+
+\subsection{Usability Requirement}
+\begin{itemize}
+    \item The unified interface style and friendly user interaction design make it more convenient for users to acquire
+The information you want.
+    \item Reduce the user's learning cost as far as possible, convenient operation, reasonable operation process, the completion of the operation when the unified standard prompt information.
+    \item Support no computer use experience, less computer use experience and have more computer use experience users can easily use the system
+    \item The system has a certain fault-tolerant and anti-interference ability, in the non-hardware fault or non-communication fault, the system can ensure the normal operation, and there are enough prompt information to help users effectively and correctly complete the task.
+    \item The system has some flexibility, can prompt the user how to operate
+    \item The system is universal, easy to learn and practical
+    \item The site features fewer features and fewer redundant and annoying features.
+\end{itemize}
+
+\subsection{Maintainability Requirement}
+\begin{itemize}
+    \item Maintainability is the ability to modify problems or defects in existing system functionality without affecting the rest of the system.
+When developers create and design system architectures, they must consider the following elements in order to improve system maintainability: low-coupling, high-in-aggregate systems.
+    \item This system will adopt strict software engineering specification to develop, and adopt good design mode to ensure the low coupling and high cohesion between the modules.
+    \item All the code of the system will be detailed comments, for all the code of the system, we will generate detailed technical documentation.
+For the system development process may appear error, we will document the way a detailed list of error and corresponding error message.
+    \item Relevant documentation should be clear, complete and consistent
+    \item At the same time, it should have good function, data extensibility and adaptability to the environment
+\end{itemize}
+
+\subsection{Expandability Requirement}
+After the completion of the system, no major changes should be made to the existing system or affect the whole system
+In this way, it is convenient to add corresponding functions according to the needs of users in the later maintenance process without affecting the normal operation of other function modules of the system.
+In addition, all documentation should be detailed and complete so that other recipients or new developers can quickly learn about the system and properly update and enhance it.
+
+\subsection{Stability Requirement}
+The website can normally complete all functional requirements, and ensure that the server runs for a long time without obstacles.
+Fault repair time is generally controlled within 3 hours, unless there is a vicious attack, virus damage, insufficient system resources, hardware failure, operating system crash network interruption, do not allow memory leak.
+The system is required to be able to withstand the warning storm and the impact of the large amount of data, not memory overflow and other phenomena.
+
+\subsection{Operational Environment Convertibility Requirements}
+This web page can be self-adapted to normal operation on the mobile phone.
 
 
 \chapter{Other Requirements}
