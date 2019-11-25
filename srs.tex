@@ -1070,7 +1070,8 @@ The frontend and backend should both check the input data to ensure the user inp
 Some sensitive data, including phone numbers and email address is store in database, once divulged, the user may be affected by harass message. The database authorization should be granted with caution.\\ 
 Some days the system should be deployed in disturbed system, maintaining consistency by consensus algorithm, avoiding data safety, minimize the danger of dropping data caused by crash.\\
 
-\section{Flexibility Requirement}
+\section{Software Quality Attributes}
+\subsection{Flexibility Requirement}
 We use iterative development, in a week, for a development cycle, check every three days to discuss the progress of the development, after the end of each iteration to joint test of existing functions, to ensure that when the former system can run normally after discussing the development of the next increment details and concrete tasks, we carried out in accordance with the system module division of labor, each member is responsible for the view, model, control device and block chain one of four modules or some modules of all the work, each mold piece in have different emphases, members based on their ability to select the corresponding module development,
 Docking test will be conducted between modules after completion of development\\
 The development mode of test-driven development is adopted. After the development task is determined, the corresponding unit test is written first. The code written during functional development needs to pass the unit test written at the beginning to ensure the writing efficiency and quality of the code.\\
@@ -1079,11 +1080,11 @@ This approach reduces the additional development effort due to planned changes a
 We will adopt a backward compatible development plan in the development process, that is, our system can be well adapted to the new environment in the future, and the client supports a variety of system adaptations, and can work well on different types of devices.\\
 The relevant interface information of the system is stored in the database. If the software interface of the foreign department changes during the system operation, the content in the database can be modified to adapt to the change\\
 
-\section{Reliability Requirement}
+\subsection{Reliability Requirement}
 The entire system will be distributed in the form of a database so that each participating node can get a copy of the complete database.
 Unless more than 51\% of nodes in the entire system can be controlled at the same time, changes to the database on a single node are not valid and cannot affect the data content on other nodes.
 
-\section{Usability Requirement}
+\subsection{Usability Requirement}
 \begin{itemize}
     \item The unified interface style and friendly user interaction design make it more convenient for users to acquire
 The information you want.
@@ -1095,7 +1096,7 @@ The information you want.
     \item The site features fewer features and fewer redundant and annoying features.
 \end{itemize}
 
-\section{Maintainability Requirement}
+\subsection{Maintainability Requirement}
 \begin{itemize}
     \item Maintainability is the ability to modify problems or defects in existing system functionality without affecting the rest of the system.
 When developers create and design system architectures, they must consider the following elements in order to improve system maintainability: low-coupling, high-in-aggregate systems.
@@ -1106,17 +1107,17 @@ For the system development process may appear error, we will document the way a 
     \item At the same time, it should have good function, data extensibility and adaptability to the environment
 \end{itemize}
 
-\section{Expandability Requirement}
+\subsection{Expandability Requirement}
 After the completion of the system, no major changes should be made to the existing system or affect the whole system
 In this way, it is convenient to add corresponding functions according to the needs of users in the later maintenance process without affecting the normal operation of other function modules of the system.
 In addition, all documentation should be detailed and complete so that other recipients or new developers can quickly learn about the system and properly update and enhance it.
 
-\section{Stability Requirement}
+\subsection{Stability Requirement}
 The website can normally complete all functional requirements, and ensure that the server runs for a long time without obstacles.
 Fault repair time is generally controlled within 3 hours, unless there is a vicious attack, virus damage, insufficient system resources, hardware failure, operating system crash network interruption, do not allow memory leak.
 The system is required to be able to withstand the warning storm and the impact of the large amount of data, not memory overflow and other phenomena.
 
-\section{Operational Environment Convertibility Requirements}
+\subsection{Operational Environment Convertibility Requirements}
 This web page can be self-adapted to normal operation on the mobile phone.
 
 
