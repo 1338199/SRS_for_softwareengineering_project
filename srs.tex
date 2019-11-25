@@ -85,17 +85,23 @@
         \hline
 	    Name & Date & Reason For Changes & Version\\
         \hline
-	    Jiang Xiaohu & 2019.11.1 & Finish Introduction Part  & v1.0\\
+	    Jiang Xiaohu & 2019.11.11 & Finish Introduction Part  & v1.0\\
         \hline
-	    Wang Yicheng & 2019.11.2 & Finish Overview Part & v1.1\\
+	    Wang Yicheng & 2019.11.12 & Finish Overview Part & v1.1\\
         \hline
-        Xu Jingnan & 2019.11.3 & Finish External Requirements Part & v1.2\\
+        Xu Jingnan & 2019.11.13 & Finish External Requirements Part & v1.2\\
         \hline
-        Xu Jingnan, Jiang Xiaohu, Wang Yicheng & 2019.11.4 & Finish Sequence Diagrams for Function Modeling Part& v1.3\\
+        Xu Jingnan, Jiang Xiaohu, Wang Yicheng & 2019.11.14 & Finish Sequence Diagrams for Function Modeling Part& v1.3\\
         \hline
-        Xu Jingnan & 2019.11.5 & Finish Function Modeling Part & v1.4\\
+        Xu Jingnan & 2019.11.15 & Finish Function Modeling Part & v1.4\\
         \hline
-        Jiang Xiaohu & 2019.11.6 & Finish Data Modeling Part  & v1.5\\
+        Jiang Xiaohu & 2019.11.16 & Finish Data Modeling Part  & v1.5\\
+        \hline
+        Wang Yicheng & 2019.11.17 & Finish Behavior Requirements Part & v1.6\\
+        \hline
+        Xu Jingnan & 2019.11.18 & Finish Nonfunctional Requirements Part & v1.7\\
+        \hline
+        Jiang Xiaohu & 2019.11.19 & Finish Data Dictionary Requirements Part & v1.8\\
         \hline
     \end{tabular}
 \end{center}
@@ -1072,12 +1078,18 @@ Some days the system should be deployed in disturbed system, maintaining consist
 
 \section{Software Quality Attributes}
 \subsection{Flexibility Requirement}
-We use iterative development, in a week, for a development cycle, check every three days to discuss the progress of the development, after the end of each iteration to joint test of existing functions, to ensure that when the former system can run normally after discussing the development of the next increment details and concrete tasks, we carried out in accordance with the system module division of labor, each member is responsible for the view, model, control device and block chain one of four modules or some modules of all the work, each mold piece in have different emphases, members based on their ability to select the corresponding module development,
+We use iterative development, in a week, for a development cycle, check every three days to discuss the progress of the development, after the end of each iteration to joint test of existing functions, to ensure that when the former system can run normally after discussing the development of the next increment details and concrete tasks, we carried out in accordance with the system module division of labor, each member is responsible for the view, model, control device and block chain one of four modules or some modules of all the work, each mold piece in have different emphases, members based on their ability to select the corresponding module development.\\
+
 Docking test will be conducted between modules after completion of development\\
+
 The development mode of test-driven development is adopted. After the development task is determined, the corresponding unit test is written first. The code written during functional development needs to pass the unit test written at the beginning to ensure the writing efficiency and quality of the code.\\
-Git is adopted for project management, and corresponding records are kept for each function update and version iteration. If the plan needs to be changed or improved, the most appropriate version can be selected to continue development based on the original development.
+
+Git is adopted for project management, and corresponding records are kept for each function update and version iteration. If the plan needs to be changed or improved, the most appropriate version can be selected to continue development based on the original development.\\
+
 This approach reduces the additional development effort due to planned changes and allows us to be more flexible with the changes we encounter during development.\\
+
 We will adopt a backward compatible development plan in the development process, that is, our system can be well adapted to the new environment in the future, and the client supports a variety of system adaptations, and can work well on different types of devices.\\
+
 The relevant interface information of the system is stored in the database. If the software interface of the foreign department changes during the system operation, the content in the database can be modified to adapt to the change\\
 
 \subsection{Reliability Requirement}
@@ -1123,13 +1135,32 @@ This web page can be self-adapted to normal operation on the mobile phone.
 
 \chapter{Other Requirements}
 \label{Other Requirements}
-$<$Define any other requirements not covered elsewhere in the SRS. This might 
-include database requirements, internationalization requirements, legal 
-requirements, reuse objectives for the project, and so on. Add any new sections 
-that are pertinent to the project.$>$
+%$<$Define any other requirements not covered elsewhere in the SRS. This might 
+%include database requirements, internationalization requirements, legal 
+%requirements, reuse objectives for the project, and so on. Add any new sections 
+%that are pertinent to the project.$>$
 
 \section{Data Dictionary Requirements}
-$<$ $>$
+A data dictionary, or metadata repository, as defined in the IBM Dictionary of Computing[], is a "centralized repository of information about data such as meaning, relationships to other data, origin, usage and format.”\\
+
+\noindent The primary goal of our data dictionary is to allow users to better understand the data in the data
+warehouse. 
+The Data Dictionary should be:
+\begin{itemize}
+	\item Accessible – For both reading and updating.
+\item Reliable – The information in the data dictionary must be kept up to date and managed by the appropriate data stewards.
+\item Robust – The richer the information, the more useful. Must also be searchable.
+\item Central – One and only one data dictionary.
+\end{itemize}
+%The main requirements in the remainder of this document intend to describe:
+%\begin{itemize}
+%\item What information we will store about the data elements in the data dictionary.
+%\item How the information will be stored.
+%\item How it will be accessed.
+%\item How it will be updated.
+%\item Other considerations.
+%\end{itemize}
+The process of building out information in the data dictionary will last for as long as the data warehouse is in existence. It is expected that as clients use the system, especially Subject Matter Experts/Data Stewards, they will update the Data Dictionary as needed with new and useful information.
 
 %\section{Appendix A: Glossary}
 %%see https://en.wikibooks.org/wiki/LaTeX/Glossary
@@ -1138,13 +1169,13 @@ $<$ $>$
 %multiple projects or the entire organization, and just include terms specific to 
 %a single project in each SRS.$>$
 
-\section{Appendix A: Analysis Models}
-$<$Optionally, include any pertinent analysis models, such as data flow 
-diagrams, class diagrams, state-transition diagrams, or entity-relationship 
-diagrams.$>$
-
-\section{Appendix B: To Be Determined List}
-$<$Collect a numbered list of the TBD (to be determined) references that remain 
-in the SRS so they can be tracked to closure.$>$
+%\section{Appendix A: Analysis Models}
+%$<$Optionally, include any pertinent analysis models, such as data flow 
+%diagrams, class diagrams, state-transition diagrams, or entity-relationship 
+%diagrams.$>$
+%
+%\section{Appendix B: To Be Determined List}
+%$<$Collect a numbered list of the TBD (to be determined) references that remain 
+%in the SRS so they can be tracked to closure.$>$
 
 \end{document}
