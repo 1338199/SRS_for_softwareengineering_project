@@ -41,7 +41,7 @@
     urlcolor=purple,        % color of external links
     linktoc=page            % only page is linked
 }%
-\def\myversion{1.0 }
+\def\myversion{1.8 }
 \date{}
 %\title{%
 
@@ -85,23 +85,23 @@
         \hline
 	    Name & Date & Reason For Changes & Version\\
         \hline
-	    Jiang Xiaohu & 2019.11.11 & Finish Introduction Part  & v1.0\\
+	    Jiang Xiaohu & 2019.11.12 & Finish Introduction Part  & v1.0\\
         \hline
-	    Wang Yicheng & 2019.11.12 & Finish Overview Part & v1.1\\
+	    Wang Yicheng & 2019.11.14 & Finish Overview Part & v1.1\\
         \hline
-        Xu Jingnan & 2019.11.13 & Finish External Requirements Part & v1.2\\
+        Xu Jingnan & 2019.11.16 & Finish External Requirements Part & v1.2\\
         \hline
-        Xu Jingnan, Jiang Xiaohu, Wang Yicheng & 2019.11.14 & Finish Sequence Diagrams for Function Modeling Part& v1.3\\
+        Xu Jingnan, Jiang Xiaohu, Wang Yicheng & 2019.11.18 & Finish Sequence Diagrams for Function Modeling Part& v1.3\\
         \hline
-        Xu Jingnan & 2019.11.15 & Finish Function Modeling Part & v1.4\\
+        Xu Jingnan & 2019.11.20 & Finish Function Modeling Part & v1.4\\
         \hline
-        Jiang Xiaohu & 2019.11.16 & Finish Data Modeling Part  & v1.5\\
+        Jiang Xiaohu & 2019.11.21 & Finish Data Modeling Part  & v1.5\\
         \hline
-        Wang Yicheng & 2019.11.17 & Finish Behavior Requirements Part & v1.6\\
+        Wang Yicheng & 2019.11.22 & Finish Behavior Requirements Part & v1.6\\
         \hline
-        Xu Jingnan & 2019.11.18 & Finish Nonfunctional Requirements Part & v1.7\\
+        Xu Jingnan & 2019.11.23 & Finish Nonfunctional Requirements Part & v1.7\\
         \hline
-        Jiang Xiaohu & 2019.11.19 & Finish Data Dictionary Requirements Part & v1.8\\
+        Jiang Xiaohu & 2019.11.25 & Finish Data Dictionary Requirements Part & v1.8\\
         \hline
     \end{tabular}
 \end{center}
@@ -1170,8 +1170,26 @@ The Data Dictionary should be:
 %\item How it will be updated.
 %\item Other considerations.
 %\end{itemize}
-The process of building out information in the data dictionary will last for as long as the data warehouse is in existence. It is expected that as clients use the system, especially Subject Matter Experts/Data Stewards, they will update the Data Dictionary as needed with new and useful information.
+The process of building out information in the data dictionary will last for as long as the data warehouse is in existence. It is expected that as clients use the system, especially Subject Matter Experts/Data Stewards, they will update the Data Dictionary as needed with new and useful information.\\
+\subsection{Data Dictionary Example}
+\noindent An example is as follows:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{figures/classUser.png}
+	\caption{Class User}
+\end{figure}
+\noindent User refers to someone who interacts with iSport including sports fans, athletes and injured patients who need recovery training. Class User store the information of the user and execute corresponding operations.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/attributes.png}
+	\caption{Attributes of Class User}
+\end{figure}
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/interface.png}
+	\caption{Interfaces of Class User}
+\end{figure}
 %\section{Appendix A: Glossary}
 %%see https://en.wikibooks.org/wiki/LaTeX/Glossary
 %$<$Define all the terms necessary to properly interpret the SRS, including 
