@@ -555,7 +555,7 @@ The user information is displayed in user interface, such as username, user's co
     \includegraphics[width=\linewidth]{./FuncPhoto/4.png}   
     \caption{modify User Info}
 \end{figure}
-A user can modify his information, such as phone number, email address, username or password, anything but user ID.
+A user can modify his information, such as phone number, email address, username or password, anything but user ID. User identification should be checked once he requests a modification.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/5.png}   
@@ -579,7 +579,7 @@ User can browse all course he has taken, then choose one to go on with. This API
     \includegraphics[width=\linewidth]{./FuncPhoto/8.png}   
     \caption{Display Recommend Courses}
 \end{figure}
-Sometimes user need our system to give some recommends on courses.
+Sometimes user need our system to give some recommends on courses. The recommend system is based on user's course which he has taken.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/9.png}   
@@ -591,13 +591,13 @@ Before user takes a course, he may browse the evaluation to judge whether a cour
     \includegraphics[width=\linewidth]{./FuncPhoto/10.png}   
     \caption{Add to My Course}
 \end{figure}
-User can add a favored course to his course list.
+User can add a favored course to his course list. He can browse his favored course in user center.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/11.png}   
     \caption{Delete from My Course}
 \end{figure}
-User can delete a unwished course from his course list.
+If User decide not to take a course any more, he can delete a unwished course from his course list.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/12.png}   
@@ -609,38 +609,38 @@ A coach may review course takers' report to modify his course, make it more reli
     \includegraphics[width=\linewidth]{./FuncPhoto/13.png}   
     \caption{Comment Courses}
 \end{figure}
-User can comment courses he takers.
+User can comment courses he takes. The comment will be shown on a forum, users can communicate with each other.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/14.png}   
     \caption{Collect Gesture Data}
 \end{figure}
-System collects user's gesture data to analyze.
+System collects user's gesture data to analyze. The data will only be used for analyzing whether user does is wrong. 
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/15.png}   
     \caption{Compare Gesture Data}
 \end{figure}
-System compare user's gesture data with coach's.
+System compare user's gesture data with coach's. If dismatched, a notification will be generated, and system will send it to user's end.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/16.png}   
     \caption{Notify Discrepancy Gesture }
 \end{figure}
-If the user did wrong, System shows a notification to warn.
+If the user did wrong, System generate a notification and send to user's browser, user can get a wain fron backend and knoew what he does is wrong.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/17.png}   
     \caption{Evaluate Courses}
 \end{figure}
-User evaluate a course.
+After user learns a course, user can evaluate a course by his learning achievement. If user dislikes this course, he can also submit a negative evaluation.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/18.png}   
     \caption{Add New Courses}
 \end{figure}
-Administrators add new courses to dababase.
-
+The courses data need be keeped updating. A coach, most of the time an administrator can add new courses to dababase. After auditing, the course will be displayed on our website. 
+ 
 \subsection{Data Modeling}
 \subsubsection{Scenario Description}
 First, \underline{users} need to register and input their information including \underline{account name}, \underline{password}, \underline{tel-number} and \underline{email address}. For users’ convenience, they can change their \underline{information} in later days.\\
