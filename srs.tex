@@ -556,11 +556,84 @@ The session communication data is transferred in form of json. Json is a lightwe
 \end{figure}
 User should register before he uses our service. Function will ensure that the input is legal and not exists in database.
 
+\begin{longtable}{|p{1.9in}|p{4in}|c|}
+xxxxx & xxxxxx  \kill
+\caption{Detailed description of user register\label{simple}}\\ \hline
+\multicolumn{3}{|c|}{\bf Use Case Specification}\\ \hline
+\endfirsthead
+\caption[]{(continued)}\\ \hline
+\multicolumn{3}{|c|}{\bf Use Case Specification (continued)}\\
+\hline
+\endhead
+\hline
+\multicolumn{3}{|c|}{\bf Continued $\ldots$}\\
+\hline
+\endfoot
+\hline
+\multicolumn{3}{|c|}{\bf The End}\\
+\hline
+\endlastfoot
+User case & Register  \\
+\hline
+Primary actor & User.\\  \hline
+Goal in context & Help user register on iSport.\\  \hline
+Preconditions & iSport support register function.\\ \hline
+Trigger & User decides to register an account on iSport register page.\\ \hline
+Scenario & \makecell[l]{1. User goes to register page;\\2. User input his/her name, password, \\email and phone number; \\ 3. User submit the information; \\ 4. User get register's success message.} \\ \hline
+Exceptions & \makecell[l]{1. There is already a same user name;\\ 2. User hasn't input all required information} \\ \hline
+Priority & Must implemented.\\ \hline
+When available & First iteration.\\ \hline
+Frequency of use & First time when the user uses iSport.\\ \hline
+Channel to actor & Through iSport's register page.\\ \hline
+Secondary actors & iSport.\\ 
+\hline 
+Channel to secondary actors & Check registration validation.\\ 
+\hline
+Open issues & none.\\ 
+\hline  
+\end{longtable}
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/2.png}   
     \caption{Login}
 \end{figure}
 User should log in before he uses our service. 
+
+\begin{longtable}{|p{1.9in}|p{4in}|c|}
+xxxxx & xxxxxx  \kill
+\caption{Detailed description of user log in\label{simple}}\\ \hline
+\multicolumn{3}{|c|}{\bf Use Case Specification}\\ \hline
+\endfirsthead
+\caption[]{(continued)}\\ \hline
+\multicolumn{3}{|c|}{\bf Use Case Specification (continued)}\\
+\hline
+\endhead
+\hline
+\multicolumn{3}{|c|}{\bf Continued $\ldots$}\\
+\hline
+\endfoot
+\hline
+\multicolumn{3}{|c|}{\bf The End}\\
+\hline
+\endlastfoot
+User case & Login  \\
+\hline
+Primary actor & User.\\  \hline
+Goal in context & Help user log in iSport.\\  \hline
+Preconditions & \makecell[l]{1. iSport support login function.\\ 2. User has registered before.}\\ \hline
+Trigger & User decides to log in iSport.\\ \hline
+Scenario & \makecell[l]{1. User goes to login page;\\2. User input his/her name, password; \\ 3. User submit the information; \\ 4. User get to the main page.} \\ \hline
+Exceptions & \makecell[l]{1. User input wrong account name or \\password} \\ \hline
+Priority & Must implemented.\\ \hline
+When available & First iteration.\\ \hline
+Frequency of use & Multiple times a day.\\ \hline
+Channel to actor & Through iSport's login page.\\ \hline
+Secondary actors & iSport.\\ 
+\hline 
+Channel to secondary actors & Check login validation.\\ 
+\hline
+Open issues & none.\\ 
+\hline  
+\end{longtable}
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/3.png}   
@@ -568,11 +641,85 @@ User should log in before he uses our service.
 \end{figure}
 The user information is displayed in user interface, such as username, user's course. Frontend will recall this API after logging in.
 
+\begin{longtable}{|p{1.9in}|p{4in}|c|}
+xxxxx & xxxxxx  \kill
+\caption{Detailed description of viewing user info\label{simple}}\\ \hline
+\multicolumn{3}{|c|}{\bf Use Case Specification}\\ \hline
+\endfirsthead
+\caption[]{(continued)}\\ \hline
+\multicolumn{3}{|c|}{\bf Use Case Specification (continued)}\\
+\hline
+\endhead
+\hline
+\multicolumn{3}{|c|}{\bf Continued $\ldots$}\\
+\hline
+\endfoot
+\hline
+\multicolumn{3}{|c|}{\bf The End}\\
+\hline
+\endlastfoot
+User case & View user info  \\
+\hline
+Primary actor & User.\\  \hline
+Goal in context & Help user view his/her info.\\  \hline
+Preconditions & \makecell[l]{1. iSport support user info viewing function.\\ 2. User has logged in.}\\ \hline
+Trigger & User decides to view his/her info and go to profile page.\\ \hline
+Scenario & \makecell[l]{1. User goes to profile page;\\2. User see his/her info including account \\name, email, phone, status.} \\ \hline
+Exceptions & none \\ \hline
+Priority & Must implemented.\\ \hline
+When available & First iteration.\\ \hline
+Frequency of use & Multiple times a day.\\ \hline
+Channel to actor & Through iSport's profile page.\\ \hline
+Secondary actors & iSport.\\ 
+\hline 
+Channel to secondary actors & Help get the info from database.\\ 
+\hline
+Open issues & none.\\ 
+\hline  
+\end{longtable}
+
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/4.png}   
     \caption{modify User Info}
 \end{figure}
 A user can modify his information, such as phone number, email address, username or password, anything but user ID. User identification should be checked once he requests a modification.
+
+\begin{longtable}{|p{1.9in}|p{4in}|c|}
+xxxxx & xxxxxx  \kill
+\caption{Detailed description of updating user info\label{simple}}\\ \hline
+\multicolumn{3}{|c|}{\bf Use Case Specification}\\ \hline
+\endfirsthead
+\caption[]{(continued)}\\ \hline
+\multicolumn{3}{|c|}{\bf Use Case Specification (continued)}\\
+\hline
+\endhead
+\hline
+\multicolumn{3}{|c|}{\bf Continued $\ldots$}\\
+\hline
+\endfoot
+\hline
+\multicolumn{3}{|c|}{\bf The End}\\
+\hline
+\endlastfoot
+User case & Update user info  \\
+\hline
+Primary actor & User.\\  \hline
+Goal in context & Help user update his/her info.\\  \hline
+Preconditions & \makecell[l]{1. iSport support user info updating function.\\ 2. User has logged in.}\\ \hline
+Trigger & User decides to update his/her info and go to profile page.\\ \hline
+Scenario & \makecell[l]{1. User goes to profile page;\\ 2. User chooses to update information.\\3. User input new information \\4. User see his/her new info including account \\name, email, phone, status.} \\ \hline
+Exceptions & User input illegal new info \\ \hline
+Priority & Must implemented.\\ \hline
+When available & First iteration.\\ \hline
+Frequency of use & Maybe a month a time.\\ \hline
+Channel to actor & Through iSport's profile page.\\ \hline
+Secondary actors & iSport.\\ 
+\hline 
+Channel to secondary actors & Check if the new info legal.\\ 
+\hline
+Open issues & none.\\ 
+\hline  
+\end{longtable}
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/5.png}   
@@ -580,11 +727,85 @@ A user can modify his information, such as phone number, email address, username
 \end{figure}
 User can browse all course he has taken, then choose one to go on with. This API is for exercise courses.
 
+\begin{longtable}{|p{1.9in}|p{4in}|c|}
+xxxxx & xxxxxx  \kill
+\caption{Detailed description of displaying exercise courses\label{simple}}\\ \hline
+\multicolumn{3}{|c|}{\bf Use Case Specification}\\ \hline
+\endfirsthead
+\caption[]{(continued)}\\ \hline
+\multicolumn{3}{|c|}{\bf Use Case Specification (continued)}\\
+\hline
+\endhead
+\hline
+\multicolumn{3}{|c|}{\bf Continued $\ldots$}\\
+\hline
+\endfoot
+\hline
+\multicolumn{3}{|c|}{\bf The End}\\
+\hline
+\endlastfoot
+User case & Display exercise courses  \\
+\hline
+Primary actor & Sports fans and athletes.\\  \hline
+Goal in context & Help user view exercise courses.\\  \hline
+Preconditions & \makecell[l]{1. iSport support exercises courses\\ displaying function.\\ 2. User has logged in.}\\ \hline
+Trigger & User decides to view exercise courses page.\\ \hline
+Scenario & \makecell[l]{1. User goes to exercise courses page;\\ 2. User view exercise courses.} \\ \hline
+Exceptions & none \\ \hline
+Priority & Must implemented.\\ \hline
+When available & First iteration.\\ \hline
+Frequency of use & Multiple time a day.\\ \hline
+Channel to actor & Through iSport's Course page.\\ \hline
+Secondary actors & iSport.\\ 
+\hline 
+Channel to secondary actors & Show the exercise courses information.\\ 
+\hline
+Open issues & none.\\ 
+\hline  
+\end{longtable}
+
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/6.png}   
     \caption{Display Recover Course}
 \end{figure}
 User can browse all course he has taken, then choose one to go on with. This API is for recover courses. 
+
+\begin{longtable}{|p{1.9in}|p{4in}|c|}
+xxxxx & xxxxxx  \kill
+\caption{Detailed description of displaying recover courses\label{simple}}\\ \hline
+\multicolumn{3}{|c|}{\bf Use Case Specification}\\ \hline
+\endfirsthead
+\caption[]{(continued)}\\ \hline
+\multicolumn{3}{|c|}{\bf Use Case Specification (continued)}\\
+\hline
+\endhead
+\hline
+\multicolumn{3}{|c|}{\bf Continued $\ldots$}\\
+\hline
+\endfoot
+\hline
+\multicolumn{3}{|c|}{\bf The End}\\
+\hline
+\endlastfoot
+User case & Display recover courses  \\
+\hline
+Primary actor & Patients.\\  \hline
+Goal in context & Help user view recover courses.\\  \hline
+Preconditions & \makecell[l]{1. iSport support recover courses\\ displaying function.\\ 2. User has logged in.}\\ \hline
+Trigger & User decides to view recover courses page.\\ \hline
+Scenario & \makecell[l]{1. User goes to recover courses page;\\ 2. User view recover courses.} \\ \hline
+Exceptions & none \\ \hline
+Priority & Must implemented.\\ \hline
+When available & First iteration.\\ \hline
+Frequency of use & Multiple time a day.\\ \hline
+Channel to actor & Through iSport's Course page.\\ \hline
+Secondary actors & iSport.\\ 
+\hline 
+Channel to secondary actors & Show the recover courses information.\\ 
+\hline
+Open issues & none.\\ 
+\hline  
+\end{longtable}
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/7.png}   
@@ -1255,7 +1476,7 @@ This stateschart describe the states transition of posture infomation flow
 \subsection{Precision}
 \subsubsection{Input precision}
 Phone number: 11 digits, will convert to string in database. \\
-Email: numbers or letters, regex pattern: /\^([A-Za-z0-9\_$\backslash$-$\backslash$.])+$\backslash$.([A-Za-z]\{2,4\})\$/. \\
+Email: numbers or letters, regex pattern: /\^ \space([A-Za-z0-9\_$\backslash$-$\backslash$.])+$\backslash$.([A-Za-z]\{2,4\})\$/. \\
 
 \subsection{Time speciality requirement}
 \subsubsection{Response time}
