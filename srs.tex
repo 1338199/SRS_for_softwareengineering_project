@@ -19,6 +19,7 @@
 \usepackage{listings}
 \usepackage{float}
 \usepackage{setspace}
+\usepackage{makecell}
 \usepackage{url}
 \usepackage{longtable}
 \usepackage{booktabs}
@@ -597,11 +598,39 @@ User can browse all course he has taken, then choose one to go on with. This API
 \end{figure}
 Sometimes user need our system to give some recommends on courses. The recommend system is based on user's course which he has taken.
 
+
+
+
+\begin{longtable}{|p{1.9in}|p{4in}|c|}
+xxxxx & xxxxxx  \kill
+\caption{Detailed description of display recommend courses\label{simple}}\\ \hline
+\endfirsthead
+\endhead
+\hline
+\endlastfoot
+User case & Display recommend courses \\
+\hline
+Primary actor & User \\ \hline
+Goal in context & To show the right recommend courses to the user\\  \hline
+Preconditions & This user has log in to the system correctly\\  \hline
+Trigger & The user click the "recommend page" button and move to recommend courses page\\ \hline
+Scenario & \makecell[l]{1. User: view the main page.\\ 2. User: click the "recommend page" button\\ 3. User: view the recommend courses} \\ \hline
+Exceptions & \makecell[l]{1. The user is not log in correctly: System will\\ show the notice and go to the log in page.\\ 2. The user has select all the courses in his\\ course list: The page will show the message\\ "No recommend course for you since you have \\chosen all the courses"}\\ \hline
+Priority & No need\\ \hline
+When available & First increment\\ \hline
+Frequency of use & Many times per week\\ \hline
+Channel to actor & Via recommend page interface\\ \hline
+Open issues & 1. Should there be a way to activate the recommend course page without the log in process?\\ 
+\hline
+\end{longtable}
+
+
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/9.png}   
     \caption{Display Course Evaluation}
 \end{figure}
 Before user takes a course, he may browse the evaluation to judge whether a course is worth taking.
+
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/10.png}   
@@ -609,17 +638,66 @@ Before user takes a course, he may browse the evaluation to judge whether a cour
 \end{figure}
 User can add a favored course to his course list. He can browse his favored course in user center.
 
+
+\begin{longtable}{|p{1.9in}|p{4in}|c|}
+xxxxx & xxxxxx  \kill
+\caption{Detailed description of add to my course\label{simple}}\\ \hline
+\endfirsthead
+\endhead
+\hline
+\endlastfoot
+User case & Display recommend courses \\
+\hline
+Primary actor & User \\ \hline
+Goal in context & To add the selected courses to user's course list\\  \hline
+Preconditions & This user has log in to the system correctly\\  \hline
+Trigger & The user click the "add to my course" button below the course\\ \hline
+Scenario & \makecell[l]{1. User: view the course list page.\\ 2. User: click the "add course" button\\ } \\ \hline
+Exceptions & \makecell[l]{1. The user is not log in correctly: System will\\ show the notice and go to the log in page.\\ 2. The user has select the course that is\\ already in his course list: The page will show\\ the message "You have choose this course \\before"}\\ \hline
+Priority & No need\\ \hline
+When available & First increment\\ \hline
+Frequency of use & Many times per week\\ \hline
+Channel to actor & Via each course list page interface\\ \hline
+Open issues & 1. Should the system limit the number of courses for a user to choose?\\ 
+\hline
+\end{longtable}
+
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/11.png}   
     \caption{Delete from My Course}
 \end{figure}
 If User decide not to take a course any more, he can delete a unwished course from his course list.
 
+
+
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/12.png}   
     \caption{Display User Report}
 \end{figure}
 A coach may review course takers' report to modify his course, make it more reliable.
+
+\begin{longtable}{|p{1.9in}|p{4in}|c|}
+xxxxx & xxxxxx  \kill
+\caption{Detailed description of display user report\label{simple}}\\ \hline
+\endfirsthead
+\endhead
+\hline
+\endlastfoot
+User case & Display user report \\
+\hline
+Primary actor & User \\ \hline
+Goal in context & To add the selected courses to user's course list\\  \hline
+Preconditions & \makecell[l]{1. This user has log in to the system correctly \\ 2. This user has take some courses before. }\\  \hline
+Trigger & The user click the "view report" button in side widget\\ \hline
+Scenario & \makecell[l]{1. User: click the "view report" button\\ 2. User: view user's report\\ } \\ \hline
+Exceptions & \makecell[l]{1. The user is not log in correctly: System will\\ show the notice and go to the log in page.\\ 2. The user has take no course before, the\\ report page will show nothing}\\ \hline
+Priority & No need\\ \hline
+When available & Second increment\\ \hline
+Frequency of use & Many times per week\\ \hline
+Channel to actor & Via each page that has side widget\\ \hline
+Open issues & 1. Should the system show all the course report to the user or just the last one?\\ 
+\hline
+\end{longtable}
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{./FuncPhoto/13.png}   
